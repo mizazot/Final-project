@@ -16,5 +16,18 @@ library(xlsx)
 
 ### Upoad the data
 ```{r}
-wmen_employment <- read.xlsx("whiteMenEmploymentLevel.xlsx", 1)
+library(readxl)
+whiteMenEmploymentLevel <- read_excel("Data/whiteMenEmploymentLevel.xlsx")
+whiteMenUnemploymentLevel <- read_excel("Data/whiteMenUnemploymentLevel.xlsx")
+white_women_unemployed <- read_excel("Data/white women unemployed.xlsx")
+white_women_employed <- read_excel("Data/white women employed.xlsx")
+latino_women_unemployed <- read_excel("Data/latino women unemployed.xlsx")
+latino_women_employed <- read_excel("Data/latino women employed.xlsx")
+latino_men_unemployed <- read_excel("Data/latino men unemployed.xlsx")
+latino_men_employed <- read_excel("Data/latino men employed.xlsx")
+black_women_unemployed <- read_excel("Data/black women unemployed.xlsx")
+black_women_employed <- read_excel("Data/black women employed.xlsx")
+black_men_unemployment <- read_excel("Data/black men unemployment.xlsx")
+black_men_employment <- read_excel("Data/black men employment.xlsx")
+
 ```

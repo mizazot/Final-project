@@ -160,5 +160,12 @@ black_women_unemployed %>%
   mutate(Sex="Women")
 ```
 
+### join table
+```{r}
+
+```
+
+
+
 
 

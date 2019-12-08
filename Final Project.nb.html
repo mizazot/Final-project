@@ -228,14 +228,94 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuXG4jIGFsbCBwYWNrYWdlcyB1c2VkIGZvciB0aGUgYXNzaWdubWVudFxubGlicmFyeShtb3NhaWMpXG5saWJyYXJ5KHRpZHl2ZXJzZSlcbmxpYnJhcnkoRGF0YUNvbXB1dGluZylcbmxpYnJhcnkoeGxzeClcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjbGVhbiB1cCB3b3Jrc3BhY2UgZW52aXJvbm1lbnRcbnJtKGxpc3QgPSBscygpKVxuIyBhbGwgcGFja2FnZXMgdXNlZCBmb3IgdGhlIGFzc2lnbm1lbnRcbmxpYnJhcnkobW9zYWljKVxuYGBgIn0= -->
 <pre class="r"><code># clean up workspace environment
 rm(list = ls())
-
 # all packages used for the assignment
-library(mosaic)
-library(tidyverse)
-library(DataComputing)
+library(mosaic)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBkcGx5clxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYZHBseXLigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgZmlsdGVyLCBsYWdcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBpbnRlcnNlY3QsIHNldGRpZmYsIHNldGVxdWFsLCB1bmlvblxuXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGxhdHRpY2VcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZ2dmb3JtdWxhXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGdncGxvdDJcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZ2dzdGFuY2VcblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmGdnc3RhbmNl4oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpnZ3Bsb3Qy4oCZOlxuXG4gICAgZ2VvbV9lcnJvcmJhcmgsIEdlb21FcnJvcmJhcmhcblxuXG5OZXcgdG8gZ2dmb3JtdWxhPyAgVHJ5IHRoZSB0dXRvcmlhbHM6IFxuXHRsZWFybnI6OnJ1bl90dXRvcmlhbChcImludHJvZHVjdGlvblwiLCBwYWNrYWdlID0gXCJnZ2Zvcm11bGFcIilcblx0bGVhcm5yOjpydW5fdHV0b3JpYWwoXCJyZWZpbmluZ1wiLCBwYWNrYWdlID0gXCJnZ2Zvcm11bGFcIilcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogbW9zYWljRGF0YVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBNYXRyaXhcblRoaXMgdmVyc2lvbiBvZiBTaGlueSBpcyBkZXNpZ25lZCB0byB3b3JrIHdpdGggJ2h0bWx3aWRnZXRzJyA+PSAxLjUuXG4gICAgUGxlYXNlIHVwZ3JhZGUgdmlhIGluc3RhbGwucGFja2FnZXMoJ2h0bWx3aWRnZXRzJykuXG5cblRoZSAnbW9zYWljJyBwYWNrYWdlIG1hc2tzIHNldmVyYWwgZnVuY3Rpb25zIGZyb20gY29yZSBwYWNrYWdlcyBpbiBvcmRlciB0byBhZGQgXG5hZGRpdGlvbmFsIGZlYXR1cmVzLiAgVGhlIG9yaWdpbmFsIGJlaGF2aW9yIG9mIHRoZXNlIGZ1bmN0aW9ucyBzaG91bGQgbm90IGJlIGFmZmVjdGVkIGJ5IHRoaXMuXG5cbk5vdGU6IElmIHlvdSB1c2UgdGhlIE1hdHJpeCBwYWNrYWdlLCBiZSBzdXJlIHRvIGxvYWQgaXQgQkVGT1JFIGxvYWRpbmcgbW9zYWljLlxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYbW9zYWlj4oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6TWF0cml44oCZOlxuXG4gICAgbWVhblxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmdncGxvdDLigJk6XG5cbiAgICBzdGF0XG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g4oCYcGFja2FnZTpkcGx5cuKAmTpcblxuICAgIGNvdW50LCBkbywgdGFsbHlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgYmlub20udGVzdCwgY29yLCBjb3IudGVzdCwgY292LCBmaXZlbnVtLCBJUVIsIG1lZGlhbiwgcHJvcC50ZXN0LCBxdWFudGlsZSwgc2QsXG4gICAgdC50ZXN0LCB2YXJcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBtYXgsIG1lYW4sIG1pbiwgcHJvZCwgcmFuZ2UsIHNhbXBsZSwgc3VtXG4ifQ== -->
+<pre><code>Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: lattice
+Loading required package: ggformula
+Loading required package: ggplot2
+Loading required package: ggstance
+
+Attaching package: ‘ggstance’
+
+The following objects are masked from ‘package:ggplot2’:
+
+    geom_errorbarh, GeomErrorbarh
+
+
+New to ggformula?  Try the tutorials: 
+    learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
+    learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
+Loading required package: mosaicData
+Loading required package: Matrix
+This version of Shiny is designed to work with 'htmlwidgets' &gt;= 1.5.
+    Please upgrade via install.packages('htmlwidgets').
+
+The 'mosaic' package masks several functions from core packages in order to add 
+additional features.  The original behavior of these functions should not be affected by this.
+
+Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.
+
+Attaching package: ‘mosaic’
+
+The following object is masked from ‘package:Matrix’:
+
+    mean
+
+The following object is masked from ‘package:ggplot2’:
+
+    stat
+
+The following objects are masked from ‘package:dplyr’:
+
+    count, do, tally
+
+The following objects are masked from ‘package:stats’:
+
+    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test, quantile, sd,
+    t.test, var
+
+The following objects are masked from ‘package:base’:
+
+    max, mean, min, prod, range, sample, sum</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzMwbeKUgOKUgCBcdTAwMWJbMW1BdHRhY2hpbmcgcGFja2FnZXNcdTAwMWJbMjJtIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgCB0aWR5dmVyc2UgMS4yLjEg4pSA4pSAXHUwMDFiWzM5bVxuXHUwMDFiWzMwbVx1MDAxYlszMm3inJRcdTAwMWJbMzBtIFx1MDAxYlszNG10aWJibGUgXHUwMDFiWzMwbSAyLjEuMyAgICAgXHUwMDFiWzMybeKclFx1MDAxYlszMG0gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzBtIDAuMy4yXG5cdTAwMWJbMzJt4pyUXHUwMDFiWzMwbSBcdTAwMWJbMzRtdGlkeXIgIFx1MDAxYlszMG0gMC44LjMgICAgIFx1MDAxYlszMm3inJRcdTAwMWJbMzBtIFx1MDAxYlszNG1zdHJpbmdyXHUwMDFiWzMwbSAxLjQuMFxuXHUwMDFiWzMybeKclFx1MDAxYlszMG0gXHUwMDFiWzM0bXJlYWRyICBcdTAwMWJbMzBtIDEuMy4xICAgICBcdTAwMWJbMzJt4pyUXHUwMDFiWzMwbSBcdTAwMWJbMzRtZm9yY2F0c1x1MDAxYlszMG0gMC4zLjBcdTAwMWJbMzltXG5cdTAwMWJbMzBt4pSA4pSAIFx1MDAxYlsxbUNvbmZsaWN0c1x1MDAxYlsyMm0g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIHRpZHl2ZXJzZV9jb25mbGljdHMoKSDilIDilIBcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1tb3NhaWNcdTAwMWJbMzBtOjpcdTAwMWJbMzJtY291bnQoKVx1MDAxYlszMG0gICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjpjb3VudCgpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzMwbSBcdTAwMWJbMzRtcHVycnJcdTAwMWJbMzBtOjpcdTAwMWJbMzJtY3Jvc3MoKVx1MDAxYlszMG0gICAgICAgICAgICAgbWFza3MgXHUwMDFiWzM0bW1vc2FpY1x1MDAxYlszMG06OmNyb3NzKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1tb3NhaWNcdTAwMWJbMzBtOjpcdTAwMWJbMzJtZG8oKVx1MDAxYlszMG0gICAgICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjpkbygpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzMwbSBcdTAwMWJbMzRtdGlkeXJcdTAwMWJbMzBtOjpcdTAwMWJbMzJtZXhwYW5kKClcdTAwMWJbMzBtICAgICAgICAgICAgbWFza3MgXHUwMDFiWzM0bU1hdHJpeFx1MDAxYlszMG06OmV4cGFuZCgpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzMwbSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjpcdTAwMWJbMzJtZmlsdGVyKClcdTAwMWJbMzBtICAgICAgICAgICAgbWFza3MgXHUwMDFiWzM0bXN0YXRzXHUwMDFiWzMwbTo6ZmlsdGVyKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1nZ3N0YW5jZVx1MDAxYlszMG06Olx1MDAxYlszMm1nZW9tX2Vycm9yYmFyaCgpXHUwMDFiWzMwbSBtYXNrcyBcdTAwMWJbMzRtZ2dwbG90Mlx1MDAxYlszMG06Omdlb21fZXJyb3JiYXJoKClcblx1MDAxYlszMW3inJZcdTAwMWJbMzBtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06Olx1MDAxYlszMm1sYWcoKVx1MDAxYlszMG0gICAgICAgICAgICAgICBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpsYWcoKVxuXHUwMDFiWzMxbeKcllx1MDAxYlszMG0gXHUwMDFiWzM0bW1vc2FpY1x1MDAxYlszMG06Olx1MDAxYlszMm1zdGF0KClcdTAwMWJbMzBtICAgICAgICAgICAgIG1hc2tzIFx1MDAxYlszNG1nZ3Bsb3QyXHUwMDFiWzMwbTo6c3RhdCgpXG5cdTAwMWJbMzFt4pyWXHUwMDFiWzMwbSBcdTAwMWJbMzRtbW9zYWljXHUwMDFiWzMwbTo6XHUwMDFiWzMybXRhbGx5KClcdTAwMWJbMzBtICAgICAgICAgICAgbWFza3MgXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6dGFsbHkoKVx1MDAxYlszOW1cbiJ9 -->
+<pre><code>[30m── [1mAttaching packages[22m ──────────────────────────────────────────────────── tidyverse 1.2.1 ──[39m
+[30m[32m✔[30m [34mtibble [30m 2.1.3     [32m✔[30m [34mpurrr  [30m 0.3.2
+[32m✔[30m [34mtidyr  [30m 0.8.3     [32m✔[30m [34mstringr[30m 1.4.0
+[32m✔[30m [34mreadr  [30m 1.3.1     [32m✔[30m [34mforcats[30m 0.3.0[39m
+[30m── [1mConflicts[22m ─────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[30m [34mmosaic[30m::[32mcount()[30m            masks [34mdplyr[30m::count()
+[31m✖[30m [34mpurrr[30m::[32mcross()[30m             masks [34mmosaic[30m::cross()
+[31m✖[30m [34mmosaic[30m::[32mdo()[30m               masks [34mdplyr[30m::do()
+[31m✖[30m [34mtidyr[30m::[32mexpand()[30m            masks [34mMatrix[30m::expand()
+[31m✖[30m [34mdplyr[30m::[32mfilter()[30m            masks [34mstats[30m::filter()
+[31m✖[30m [34mggstance[30m::[32mgeom_errorbarh()[30m masks [34mggplot2[30m::geom_errorbarh()
+[31m✖[30m [34mdplyr[30m::[32mlag()[30m               masks [34mstats[30m::lag()
+[31m✖[30m [34mmosaic[30m::[32mstat()[30m             masks [34mggplot2[30m::stat()
+[31m✖[30m [34mmosaic[30m::[32mtally()[30m            masks [34mdplyr[30m::tally()[39m</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShEYXRhQ29tcHV0aW5nKVxubGlicmFyeSh4bHN4KVxuYGBgIn0= -->
+<pre class="r"><code>library(DataComputing)
 library(xlsx)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -297,9 +377,239 @@ black_men_employment &lt;- read_excel(&quot;Data/black men employment.xlsx&quot;
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpdGVNZW5FbXBsb3ltZW50TGV2ZWwgJT4lXG4gIG11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyKyBBcHIrTWF5K0p1bitKdWwrQXVnK1NlcCtPY3QrTm92K0RlYyklPiVcbiAgbXV0YXRlKEVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lXG4gIHNlbGVjdChZZWFyLEVtcGxveW1lbnRfTWVhbikgJT4lXG4gIG11dGF0ZShSYWNlPVwiV2hpdGVcIikgJT4lXG4gIG11dGF0ZShTZXg9XCJNZW5cIilcbmBgYCJ9 -->
+<pre class="r"><code>whiteMenEmploymentLevel %&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Employment_Mean=total/12) %&gt;%
+  select(Year,Employment_Mean) %&gt;%
+  mutate(Race=&quot;White&quot;) %&gt;%
+  mutate(Sex=&quot;Men&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBEdEhWcXFxcXFyUU8wRmdxcXFxcXRBN1ZzTlZWVlZWVUR0WlAxVlZWVlZRTzJNOVZWVlZWVkE3ZTU2cXFxcXEwRHVRZmdBQUFBQVFPNk9zcXFxcXF0QTdzU0NxcXFxcTBEdkhRVlZWVlZWZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQVFBQ1FBQUFBVlhhR2wwWlFBRUFBa0FBQUFGVjJocGRHVUFCQUFKQUFBQUJWZG9hWFJsQUFRQUNRQUFBQVZYYUdsMFpRQUVBQWtBQUFBRlYyaHBkR1VBQkFBSkFBQUFCVmRvYVhSbEFBUUFDUUFBQUFWWGFHbDBaUUFFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQUFBRUFBQUFBc0FCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUVBQWtBQUFBRFRXVnVBQVFBQ1FBQUFBTk5aVzRBQkFBSkFBQUFBMDFsYmdBRUFBa0FBQUFEVFdWdUFBUUFDUUFBQUFOTlpXNEFCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFRQUJBQUpBQUFBQkZsbFlYSUFCQUFKQUFBQUQwVnRjR3h2ZVcxbGJuUmZUV1ZoYmdBRUFBa0FBQUFFVW1GalpRQUVBQWtBQUFBRFUyVjRBQUFFQWdBQUFBRUFCQUFKQUFBQUJXTnNZWE56QUFBQUVBQUFBQUVBQkFBSkFBQUFDbVJoZEdFdVpuSmhiV1VBQUFRQ0FBQUFBUUFFQUFrQUFBQUpjbTkzTG01aGJXVnpBQUFBRFFBQUFBS0FBQUFBLy8vLzlRQUFBUDRBQUFRQ0FBQUFBUUFFQUFrQUFBQUhiM0IwYVc5dWN3QUFBaE1BQUFBRkFBQUFFQUFBQUFFQUJBQUpBQUFBQVhJQUFBQVFBQUFBQVFBRUFBa0FBQUFQZFc1dVlXMWxaQzFqYUhWdWF5MDBBQUFBQ2dBQUFBRUFBQUFBQUFBQURRQUFBQUVBQUFBTEFBQUFEUUFBQUFFQUFBQUVBQUFFQWdBQUF2OEFBQUFRQUFBQUJRQUVBQWtBQUFBR1pXNW5hVzVsQUFRQUNRQUFBQVZzWVdKbGJBQUVBQWtBQUFBT2NtOTNibUZ0WlhNdWNISnBiblFBQkFBSkFBQUFDbkp2ZDNNdWRHOTBZV3dBQkFBSkFBQUFDbU52YkhNdWRHOTBZV3dBQUFEK0FBQUEvZz09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Employment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"59626.83","3":"White","4":"Men"},{"1":"2010","2":"59436.08","3":"White","4":"Men"},{"1":"2011","2":"60120.42","3":"White","4":"Men"},{"1":"2012","2":"60199.92","3":"White","4":"Men"},{"1":"2013","2":"60519.67","3":"White","4":"Men"},{"1":"2014","2":"61299.83","3":"White","4":"Men"},{"1":"2015","2":"61967.75","3":"White","4":"Men"},{"1":"2016","2":"62581.58","3":"White","4":"Men"},{"1":"2017","2":"63012.08","3":"White","4":"Men"},{"1":"2018","2":"63720.17","3":"White","4":"Men"},{"1":"2019","2":"NA","3":"White","4":"Men"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpdGVNZW5VbmVtcGxveW1lbnRMZXZlbCAlPiVcbm11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyKyBBcHIrTWF5K0p1bitKdWwrQXVnK1NlcCtPY3QrTm92K0RlYyklPiVcbiAgbXV0YXRlKFVuZW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiVcbiAgc2VsZWN0KFllYXIsVW5lbXBsb3ltZW50X01lYW4pICU+JVxuICBtdXRhdGUoUmFjZT1cIldoaXRlXCIpICU+JVxuICBtdXRhdGUoU2V4PVwiTWVuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>whiteMenUnemploymentLevel %&gt;%
+mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Unemployment_Mean=total/12) %&gt;%
+  select(Year,Unemployment_Mean) %&gt;%
+  mutate(Race=&quot;White&quot;) %&gt;%
+  mutate(Sex=&quot;Men&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDMmtGVlZWVlZWUUxhMUtxcXFxcXRBczY5VlZWVlZWVUN3OWFxcXFxcXJRSzh4S3FxcXFxdEFxSFFBQUFBQUFFQ2xkQ3FxcXFxclFLUk8xVlZWVlZWQW9kQlZWVlZWVlVDZ1QxVlZWVlZWZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQVFBQ1FBQUFBVlhhR2wwWlFBRUFBa0FBQUFGVjJocGRHVUFCQUFKQUFBQUJWZG9hWFJsQUFRQUNRQUFBQVZYYUdsMFpRQUVBQWtBQUFBRlYyaHBkR1VBQkFBSkFBQUFCVmRvYVhSbEFBUUFDUUFBQUFWWGFHbDBaUUFFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQUFBRUFBQUFBc0FCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUVBQWtBQUFBRFRXVnVBQVFBQ1FBQUFBTk5aVzRBQkFBSkFBQUFBMDFsYmdBRUFBa0FBQUFEVFdWdUFBUUFDUUFBQUFOTlpXNEFCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFRQUJBQUpBQUFBQkZsbFlYSUFCQUFKQUFBQUVWVnVaVzF3Ykc5NWJXVnVkRjlOWldGdUFBUUFDUUFBQUFSU1lXTmxBQVFBQ1FBQUFBTlRaWGdBQUFRQ0FBQUFBUUFFQUFrQUFBQUZZMnhoYzNNQUFBQVFBQUFBQVFBRUFBa0FBQUFLWkdGMFlTNW1jbUZ0WlFBQUJBSUFBQUFCQUFRQUNRQUFBQWx5YjNjdWJtRnRaWE1BQUFBTkFBQUFBb0FBQUFELy8vLzFBQUFBL2dBQUJBSUFBQUFCQUFRQUNRQUFBQWR2Y0hScGIyNXpBQUFDRXdBQUFBVUFBQUFRQUFBQUFRQUVBQWtBQUFBQmNnQUFBQkFBQUFBQkFBUUFDUUFBQUE5MWJtNWhiV1ZrTFdOb2RXNXJMVEVBQUFBS0FBQUFBUUFBQUFBQUFBQU5BQUFBQVFBQUFBc0FBQUFOQUFBQUFRQUFBQVFBQUFRQ0FBQUMvd0FBQUJBQUFBQUZBQVFBQ1FBQUFBWmxibWRwYm1VQUJBQUpBQUFBQld4aFltVnNBQVFBQ1FBQUFBNXliM2R1WVcxbGN5NXdjbWx1ZEFBRUFBa0FBQUFLY205M2N5NTBiM1JoYkFBRUFBa0FBQUFLWTI5c2N5NTBiM1JoYkFBQUFQNEFBQUQrIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Unemployment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"5776.333","3":"White","4":"Men"},{"1":"2010","2":"5813.167","3":"White","4":"Men"},{"1":"2011","2":"5039.333","3":"White","4":"Men"},{"1":"2012","2":"4341.667","3":"White","4":"Men"},{"1":"2013","2":"3992.583","3":"White","4":"Men"},{"1":"2014","2":"3130.000","3":"White","4":"Men"},{"1":"2015","2":"2746.083","3":"White","4":"Men"},{"1":"2016","2":"2599.417","3":"White","4":"Men"},{"1":"2017","2":"2280.167","3":"White","4":"Men"},{"1":"2018","2":"2087.667","3":"White","4":"Men"},{"1":"2019","2":"NA","3":"White","4":"Men"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpdGVfd29tZW5fZW1wbG95ZWQlPiVcbiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrIEFwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JVxuICBtdXRhdGUoRW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiVcbiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJXaGl0ZVwiKSAlPiVcbiAgbXV0YXRlKFNleD1cIldvbWVuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>white_women_employed%&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Employment_Mean=total/12) %&gt;%
+  select(Year,Employment_Mean) %&gt;%
+  mutate(Race=&quot;White&quot;) %&gt;%
+  mutate(Sex=&quot;Women&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBEcEJDcXFxcXFyUU9qbklBQUFBQUJBNk5paXFxcXFxMERvM0hxcXFxcXJRT2tBVFZWVlZWVkE2VXRBQUFBQUFFRHBlR0FBQUFBQVFPbkVZcXFxcXF0QTZmYzRBQUFBQUVEcU5pVlZWVlZWZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQVFBQ1FBQUFBVlhhR2wwWlFBRUFBa0FBQUFGVjJocGRHVUFCQUFKQUFBQUJWZG9hWFJsQUFRQUNRQUFBQVZYYUdsMFpRQUVBQWtBQUFBRlYyaHBkR1VBQkFBSkFBQUFCVmRvYVhSbEFBUUFDUUFBQUFWWGFHbDBaUUFFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQUFBRUFBQUFBc0FCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQkFBSkFBQUFCVmR2YldWdUFBUUFDUUFBQUFWWGIyMWxiZ0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQVFBQ1FBQUFBVlhiMjFsYmdBRUFBa0FBQUFGVjI5dFpXNEFCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUFCQUlBQUFBQkFBUUFDUUFBQUFWdVlXMWxjd0FBQUJBQUFBQUVBQVFBQ1FBQUFBUlpaV0Z5QUFRQUNRQUFBQTlGYlhCc2IzbHRaVzUwWDAxbFlXNEFCQUFKQUFBQUJGSmhZMlVBQkFBSkFBQUFBMU5sZUFBQUJBSUFBQUFCQUFRQUNRQUFBQVZqYkdGemN3QUFBQkFBQUFBQkFBUUFDUUFBQUFwa1lYUmhMbVp5WVcxbEFBQUVBZ0FBQUFFQUJBQUpBQUFBQ1hKdmR5NXVZVzFsY3dBQUFBMEFBQUFDZ0FBQUFQLy8vL1VBQUFEK0FBQUVBZ0FBQUFFQUJBQUpBQUFBQjI5d2RHbHZibk1BQUFJVEFBQUFCUUFBQUJBQUFBQUJBQVFBQ1FBQUFBRnlBQUFBRUFBQUFBRUFCQUFKQUFBQUQzVnVibUZ0WldRdFkyaDFibXN0TXdBQUFBb0FBQUFCQUFBQUFBQUFBQTBBQUFBQkFBQUFDd0FBQUEwQUFBQUJBQUFBQkFBQUJBSUFBQUwvQUFBQUVBQUFBQVVBQkFBSkFBQUFCbVZ1WjJsdVpRQUVBQWtBQUFBRmJHRmlaV3dBQkFBSkFBQUFEbkp2ZDI1aGJXVnpMbkJ5YVc1MEFBUUFDUUFBQUFweWIzZHpMblJ2ZEdGc0FBUUFDUUFBQUFwamIyeHpMblJ2ZEdGc0FBQUEvZ0FBQVA0PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Employment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"51233.33","3":"White","4":"Women"},{"1":"2010","2":"51001.00","3":"White","4":"Women"},{"1":"2011","2":"50885.08","3":"White","4":"Women"},{"1":"2012","2":"50915.83","3":"White","4":"Women"},{"1":"2013","2":"51202.42","3":"White","4":"Women"},{"1":"2014","2":"51802.00","3":"White","4":"Women"},{"1":"2015","2":"52163.00","3":"White","4":"Women"},{"1":"2016","2":"52771.08","3":"White","4":"Women"},{"1":"2017","2":"53177.75","3":"White","4":"Women"},{"1":"2018","2":"53681.17","3":"White","4":"Women"},{"1":"2019","2":"NA","3":"White","4":"Women"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2hpdGVfd29tZW5fdW5lbXBsb3llZCAlPiVcbiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrIEFwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JVxuICBtdXRhdGUoVW5lbXBsb3ltZW50X01lYW49dG90YWwvMTIpICU+JVxuICBzZWxlY3QoWWVhcixVbmVtcGxveW1lbnRfTWVhbikgJT4lXG4gIG11dGF0ZShSYWNlPVwiV2hpdGVcIikgJT4lXG4gIG11dGF0ZShTZXg9XCJXb21lblwiKVxuYGBgIn0= -->
+<pre class="r"><code>white_women_unemployed %&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Unemployment_Mean=total/12) %&gt;%
+  select(Year,Unemployment_Mean) %&gt;%
+  mutate(Race=&quot;White&quot;) %&gt;%
+  mutate(Sex=&quot;Women&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDdFJ5cXFxcXFyUUs3MWdBQUFBQUJBcmRPQUFBQUFBRUNyMWdBQUFBQUFRS2c2VlZWVlZWVkFwSDRBQUFBQUFFQ2hraXFxcXFxclFLQm8xVlZWVlZWQW5nNnFxcXFxcTBDYlA2cXFxcXFyZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQVFBQ1FBQUFBVlhhR2wwWlFBRUFBa0FBQUFGVjJocGRHVUFCQUFKQUFBQUJWZG9hWFJsQUFRQUNRQUFBQVZYYUdsMFpRQUVBQWtBQUFBRlYyaHBkR1VBQkFBSkFBQUFCVmRvYVhSbEFBUUFDUUFBQUFWWGFHbDBaUUFFQUFrQUFBQUZWMmhwZEdVQUJBQUpBQUFBQlZkb2FYUmxBQUFBRUFBQUFBc0FCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQkFBSkFBQUFCVmR2YldWdUFBUUFDUUFBQUFWWGIyMWxiZ0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQVFBQ1FBQUFBVlhiMjFsYmdBRUFBa0FBQUFGVjI5dFpXNEFCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUFCQUlBQUFBQkFBUUFDUUFBQUFWdVlXMWxjd0FBQUJBQUFBQUVBQVFBQ1FBQUFBUlpaV0Z5QUFRQUNRQUFBQkZWYm1WdGNHeHZlVzFsYm5SZlRXVmhiZ0FFQUFrQUFBQUVVbUZqWlFBRUFBa0FBQUFEVTJWNEFBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUNtUmhkR0V1Wm5KaGJXVUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFLQUFBQUEvLy8vOVFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkwMEFBQUFDZ0FBQUFFQUFBQUFBQUFBRFFBQUFBRUFBQUFMQUFBQURRQUFBQUVBQUFBRUFBQUVBZ0FBQXY4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Unemployment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"3747.583","3":"White","4":"Women"},{"1":"2010","2":"3962.750","3":"White","4":"Women"},{"1":"2011","2":"3817.750","3":"White","4":"Women"},{"1":"2012","2":"3563.000","3":"White","4":"Women"},{"1":"2013","2":"3101.167","3":"White","4":"Women"},{"1":"2014","2":"2623.000","3":"White","4":"Women"},{"1":"2015","2":"2249.083","3":"White","4":"Women"},{"1":"2016","2":"2100.417","3":"White","4":"Women"},{"1":"2017","2":"1923.667","3":"White","4":"Women"},{"1":"2018","2":"1743.917","3":"White","4":"Women"},{"1":"2019","2":"NA","3":"White","4":"Women"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGF0aW5vX21lbl9lbXBsb3llZCAlPiVcbiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrIEFwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JVxuICBtdXRhdGUoRW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiVcbiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJMYXRpbm9cIikgJT4lXG4gIG11dGF0ZShTZXg9XCJNZW5cIilcbmBgYCJ9 -->
+<pre class="r"><code>latino_men_employed %&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Employment_Mean=total/12) %&gt;%
+  select(Year,Employment_Mean) %&gt;%
+  mutate(Race=&quot;Latino&quot;) %&gt;%
+  mutate(Sex=&quot;Men&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBERi9DcXFxcXFyUU1aWEtxcXFxcXRBeHRMQUFBQUFBRURIMmlxcXFxcXJRTWl2QUFBQUFBQkF5Y2xWVlZWVlZVREtuSFZWVlZWVlFNdHo0QUFBQUFCQXpBbkFBQUFBQUVETkRKVlZWVlZWZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQkFBSkFBQUFCa3hoZEdsdWJ3QUVBQWtBQUFBR1RHRjBhVzV2QUFRQUNRQUFBQVpNWVhScGJtOEFCQUFKQUFBQUJreGhkR2x1YndBRUFBa0FBQUFHVEdGMGFXNXZBQVFBQ1FBQUFBWk1ZWFJwYm04QUJBQUpBQUFBQmt4aGRHbHVid0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQUFBUUFBQUFDd0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUVBQWtBQUFBRFRXVnVBQVFBQ1FBQUFBTk5aVzRBQkFBSkFBQUFBMDFsYmdBRUFBa0FBQUFEVFdWdUFBUUFDUUFBQUFOTlpXNEFCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUFBUUNBQUFBQVFBRUFBa0FBQUFGYm1GdFpYTUFBQUFRQUFBQUJBQUVBQWtBQUFBRVdXVmhjZ0FFQUFrQUFBQVBSVzF3Ykc5NWJXVnVkRjlOWldGdUFBUUFDUUFBQUFSU1lXTmxBQVFBQ1FBQUFBTlRaWGdBQUFRQ0FBQUFBUUFFQUFrQUFBQUZZMnhoYzNNQUFBQVFBQUFBQVFBRUFBa0FBQUFLWkdGMFlTNW1jbUZ0WlFBQUJBSUFBQUFCQUFRQUNRQUFBQWx5YjNjdWJtRnRaWE1BQUFBTkFBQUFBb0FBQUFELy8vLzFBQUFBL2dBQUJBSUFBQUFCQUFRQUNRQUFBQWR2Y0hScGIyNXpBQUFDRXdBQUFBVUFBQUFRQUFBQUFRQUVBQWtBQUFBQmNnQUFBQkFBQUFBQkFBUUFDUUFBQUE5MWJtNWhiV1ZrTFdOb2RXNXJMVEVBQUFBS0FBQUFBUUFBQUFBQUFBQU5BQUFBQVFBQUFBc0FBQUFOQUFBQUFRQUFBQVFBQUFRQ0FBQUMvd0FBQUJBQUFBQUZBQVFBQ1FBQUFBWmxibWRwYm1VQUJBQUpBQUFBQld4aFltVnNBQVFBQ1FBQUFBNXliM2R1WVcxbGN5NXdjbWx1ZEFBRUFBa0FBQUFLY205M2N5NTBiM1JoYkFBRUFBa0FBQUFLWTI5c2N5NTBiM1JoYkFBQUFQNEFBQUQrIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Employment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"11256.33","3":"Latino","4":"Men"},{"1":"2010","2":"11438.33","3":"Latino","4":"Men"},{"1":"2011","2":"11685.50","3":"Latino","4":"Men"},{"1":"2012","2":"12212.33","3":"Latino","4":"Men"},{"1":"2013","2":"12638.00","3":"Latino","4":"Men"},{"1":"2014","2":"13202.67","3":"Latino","4":"Men"},{"1":"2015","2":"13624.92","3":"Latino","4":"Men"},{"1":"2016","2":"14055.75","3":"Latino","4":"Men"},{"1":"2017","2":"14355.50","3":"Latino","4":"Men"},{"1":"2018","2":"14873.17","3":"Latino","4":"Men"},{"1":"2019","2":"NA","3":"Latino","4":"Men"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGF0aW5vX21lbl91bmVtcGxveWVkICU+JVxuICBtdXRhdGUgKHRvdGFsPSBKYW4rRmViK01hcisgQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lXG4gIG11dGF0ZShVbmVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lXG4gIHNlbGVjdChZZWFyLFVuZW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJMYXRpbm9cIikgJT4lXG4gIG11dGF0ZShTZXg9XCJNZW5cIilcbmBgYCJ9 -->
+<pre class="r"><code>latino_men_unemployed %&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Unemployment_Mean=total/12) %&gt;%
+  select(Year,Unemployment_Mean) %&gt;%
+  mutate(Race=&quot;Latino&quot;) %&gt;%
+  mutate(Sex=&quot;Men&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDWEFBQUFBQUFBUUplNkFBQUFBQUJBbFFTcXFxcXFxMENTcVZWVlZWVlZRSkVIcXFxcXFxdEFpd1FBQUFBQUFFQ0ptMVZWVlZWVlFJWitxcXFxcXF0QWc3NEFBQUFBQUVDQ2VWVlZWVlZWZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQkFBSkFBQUFCa3hoZEdsdWJ3QUVBQWtBQUFBR1RHRjBhVzV2QUFRQUNRQUFBQVpNWVhScGJtOEFCQUFKQUFBQUJreGhkR2x1YndBRUFBa0FBQUFHVEdGMGFXNXZBQVFBQ1FBQUFBWk1ZWFJwYm04QUJBQUpBQUFBQmt4aGRHbHVid0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQUFBUUFBQUFDd0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUVBQWtBQUFBRFRXVnVBQVFBQ1FBQUFBTk5aVzRBQkFBSkFBQUFBMDFsYmdBRUFBa0FBQUFEVFdWdUFBUUFDUUFBQUFOTlpXNEFCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUFBUUNBQUFBQVFBRUFBa0FBQUFGYm1GdFpYTUFBQUFRQUFBQUJBQUVBQWtBQUFBRVdXVmhjZ0FFQUFrQUFBQVJWVzVsYlhCc2IzbHRaVzUwWDAxbFlXNEFCQUFKQUFBQUJGSmhZMlVBQkFBSkFBQUFBMU5sZUFBQUJBSUFBQUFCQUFRQUNRQUFBQVZqYkdGemN3QUFBQkFBQUFBQkFBUUFDUUFBQUFwa1lYUmhMbVp5WVcxbEFBQUVBZ0FBQUFFQUJBQUpBQUFBQ1hKdmR5NXVZVzFsY3dBQUFBMEFBQUFDZ0FBQUFQLy8vL1VBQUFEK0FBQUVBZ0FBQUFFQUJBQUpBQUFBQjI5d2RHbHZibk1BQUFJVEFBQUFCUUFBQUJBQUFBQUJBQVFBQ1FBQUFBRnlBQUFBRUFBQUFBRUFCQUFKQUFBQUQzVnVibUZ0WldRdFkyaDFibXN0TWdBQUFBb0FBQUFCQUFBQUFBQUFBQTBBQUFBQkFBQUFDd0FBQUEwQUFBQUJBQUFBQkFBQUJBSUFBQUwvQUFBQUVBQUFBQVVBQkFBSkFBQUFCbVZ1WjJsdVpRQUVBQWtBQUFBRmJHRmlaV3dBQkFBSkFBQUFEbkp2ZDI1aGJXVnpMbkJ5YVc1MEFBUUFDUUFBQUFweWIzZHpMblJ2ZEdGc0FBUUFDUUFBQUFwamIyeHpMblJ2ZEdGc0FBQUEvZ0FBQVA0PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Unemployment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"1472.0000","3":"Latino","4":"Men"},{"1":"2010","2":"1518.5000","3":"Latino","4":"Men"},{"1":"2011","2":"1345.1667","3":"Latino","4":"Men"},{"1":"2012","2":"1194.3333","3":"Latino","4":"Men"},{"1":"2013","2":"1089.9167","3":"Latino","4":"Men"},{"1":"2014","2":"864.5000","3":"Latino","4":"Men"},{"1":"2015","2":"819.4167","3":"Latino","4":"Men"},{"1":"2016","2":"719.8333","3":"Latino","4":"Men"},{"1":"2017","2":"631.7500","3":"Latino","4":"Men"},{"1":"2018","2":"591.1667","3":"Latino","4":"Men"},{"1":"2019","2":"NA","3":"Latino","4":"Men"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGF0aW5vX3dvbWVuX2VtcGxveWVkICU+JVxuICBtdXRhdGUgKHRvdGFsPSBKYW4rRmViK01hcisgQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lXG4gIG11dGF0ZShFbXBsb3ltZW50X01lYW49dG90YWwvMTIpICU+JVxuICBzZWxlY3QoWWVhcixFbXBsb3ltZW50X01lYW4pICU+JVxuICBtdXRhdGUoUmFjZT1cIkxhdGlub1wiKSAlPiVcbiAgbXV0YXRlKFNleD1cIldvbWVuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>latino_women_employed %&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Employment_Mean=total/12) %&gt;%
+  select(Year,Employment_Mean) %&gt;%
+  mutate(Race=&quot;Latino&quot;) %&gt;%
+  mutate(Sex=&quot;Women&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDOTRPcXFxcXFyUUw1c0ZWVlZWVlZBdnU5cXFxcXFxMERCVFdBQUFBQUFRTUd3S3FxcXFxdEF3bXZBQUFBQUFFRERQb0FBQUFBQVFNUDBRQUFBQUFCQXhKY1ZWVlZWVlVERmtrQUFBQUFBZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQkFBSkFBQUFCa3hoZEdsdWJ3QUVBQWtBQUFBR1RHRjBhVzV2QUFRQUNRQUFBQVpNWVhScGJtOEFCQUFKQUFBQUJreGhkR2x1YndBRUFBa0FBQUFHVEdGMGFXNXZBQVFBQ1FBQUFBWk1ZWFJwYm04QUJBQUpBQUFBQmt4aGRHbHVid0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQUFBUUFBQUFDd0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQVFBQ1FBQUFBVlhiMjFsYmdBRUFBa0FBQUFGVjI5dFpXNEFCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQkFBSkFBQUFCVmR2YldWdUFBUUFDUUFBQUFWWGIyMWxiZ0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQUFFQWdBQUFBRUFCQUFKQUFBQUJXNWhiV1Z6QUFBQUVBQUFBQVFBQkFBSkFBQUFCRmxsWVhJQUJBQUpBQUFBRDBWdGNHeHZlVzFsYm5SZlRXVmhiZ0FFQUFrQUFBQUVVbUZqWlFBRUFBa0FBQUFEVTJWNEFBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUNtUmhkR0V1Wm5KaGJXVUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFLQUFBQUEvLy8vOVFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkwekFBQUFDZ0FBQUFFQUFBQUFBQUFBRFFBQUFBRUFBQUFMQUFBQURRQUFBQUVBQUFBRUFBQUVBZ0FBQXY4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Employment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"7648.917","3":"Latino","4":"Women"},{"1":"2010","2":"7788.083","3":"Latino","4":"Women"},{"1":"2011","2":"7919.417","3":"Latino","4":"Women"},{"1":"2012","2":"8858.750","3":"Latino","4":"Women"},{"1":"2013","2":"9056.333","3":"Latino","4":"Women"},{"1":"2014","2":"9431.500","3":"Latino","4":"Women"},{"1":"2015","2":"9853.000","3":"Latino","4":"Women"},{"1":"2016","2":"10216.500","3":"Latino","4":"Women"},{"1":"2017","2":"10542.167","3":"Latino","4":"Women"},{"1":"2018","2":"11044.500","3":"Latino","4":"Women"},{"1":"2019","2":"NA","3":"Latino","4":"Women"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGF0aW5vX3dvbWVuX3VuZW1wbG95ZWQgJT4lXG4gIG11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyKyBBcHIrTWF5K0p1bitKdWwrQXVnK1NlcCtPY3QrTm92K0RlYyklPiVcbiAgbXV0YXRlKFVuZW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiVcbiAgc2VsZWN0KFllYXIsVW5lbXBsb3ltZW50X01lYW4pICU+JVxuICBtdXRhdGUoUmFjZT1cIkxhdGlub1wiKSAlPiVcbiAgbXV0YXRlKFNleD1cIldvbWVuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>latino_women_unemployed %&gt;%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Unemployment_Mean=total/12) %&gt;%
+  select(Year,Unemployment_Mean) %&gt;%
+  mutate(Race=&quot;Latino&quot;) %&gt;%
+  mutate(Sex=&quot;Women&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBCS2N6TXpNek0wUUVwYXFxcXFxcWxBU2o3dTd1N3U4RUJLeEVSRVJFUkZRRXE1bVptWm1abEFTeWlJaUlpSWlVQkxTcXFxcXFxclFFdUFBQUFBQUFCQVMrTXpNek16TTBCTVM3dTd1N3U4Zi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQkFBSkFBQUFCa3hoZEdsdWJ3QUVBQWtBQUFBR1RHRjBhVzV2QUFRQUNRQUFBQVpNWVhScGJtOEFCQUFKQUFBQUJreGhkR2x1YndBRUFBa0FBQUFHVEdGMGFXNXZBQVFBQ1FBQUFBWk1ZWFJwYm04QUJBQUpBQUFBQmt4aGRHbHVid0FFQUFrQUFBQUdUR0YwYVc1dkFBUUFDUUFBQUFaTVlYUnBibThBQUFBUUFBQUFDd0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQVFBQ1FBQUFBVlhiMjFsYmdBRUFBa0FBQUFGVjI5dFpXNEFCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQkFBSkFBQUFCVmR2YldWdUFBUUFDUUFBQUFWWGIyMWxiZ0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQUFFQWdBQUFBRUFCQUFKQUFBQUJXNWhiV1Z6QUFBQUVBQUFBQVFBQkFBSkFBQUFCRmxsWVhJQUJBQUpBQUFBRVZWdVpXMXdiRzk1YldWdWRGOU5aV0Z1QUFRQUNRQUFBQVJTWVdObEFBUUFDUUFBQUFOVFpYZ0FBQVFDQUFBQUFRQUVBQWtBQUFBRlkyeGhjM01BQUFBUUFBQUFBUUFFQUFrQUFBQUtaR0YwWVM1bWNtRnRaUUFBQkFJQUFBQUJBQVFBQ1FBQUFBbHliM2N1Ym1GdFpYTUFBQUFOQUFBQUFvQUFBQUQvLy8vMUFBQUEvZ0FBQkFJQUFBQUJBQVFBQ1FBQUFBZHZjSFJwYjI1ekFBQUNFd0FBQUFVQUFBQVFBQUFBQVFBRUFBa0FBQUFCY2dBQUFCQUFBQUFCQUFRQUNRQUFBQTkxYm01aGJXVmtMV05vZFc1ckxUUUFBQUFLQUFBQUFRQUFBQUFBQUFBTkFBQUFBUUFBQUFzQUFBQU5BQUFBQVFBQUFBUUFBQVFDQUFBQy93QUFBQkFBQUFBRkFBUUFDUUFBQUFabGJtZHBibVVBQkFBSkFBQUFCV3hoWW1Wc0FBUUFDUUFBQUE1eWIzZHVZVzFsY3k1d2NtbHVkQUFFQUFrQUFBQUtjbTkzY3k1MGIzUmhiQUFFQUFrQUFBQUtZMjlzY3k1MGIzUmhiQUFBQVA0QUFBRCsifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Unemployment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"52.90000","3":"Latino","4":"Women"},{"1":"2010","2":"52.70833","3":"Latino","4":"Women"},{"1":"2011","2":"52.49167","3":"Latino","4":"Women"},{"1":"2012","2":"53.53333","3":"Latino","4":"Women"},{"1":"2013","2":"53.45000","3":"Latino","4":"Women"},{"1":"2014","2":"54.31667","3":"Latino","4":"Women"},{"1":"2015","2":"54.58333","3":"Latino","4":"Women"},{"1":"2016","2":"55.00000","3":"Latino","4":"Women"},{"1":"2017","2":"55.77500","3":"Latino","4":"Women"},{"1":"2018","2":"56.59167","3":"Latino","4":"Women"},{"1":"2019","2":"NA","3":"Latino","4":"Women"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmxhY2tfbWVuX2VtcGxveW1lbnQgJT4lXG4gIG11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyK0FwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JVxuICBtdXRhdGUoRW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiVcbiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJBZnJpY2FuXCIpICU+JVxuICBtdXRhdGUoU2V4PVwiTWVuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>black_men_employment %&gt;%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Employment_Mean=total/12) %&gt;%
+  select(Year,Employment_Mean) %&gt;%
+  mutate(Race=&quot;African&quot;) %&gt;%
+  mutate(Sex=&quot;Men&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDNTVTcXFxcXFyUUxvWUtxcXFxcXRBdW01QUFBQUFBRUM3d1lBQUFBQUFRTHlLS3FxcXFxdEF2YjFBQUFBQUFFQy9BbXFxcXFxclFNQVNGVlZWVlZWQXdKbktxcXFxcTBEQkZFcXFxcXFyZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBQUFCQUFBQUFMQUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUVBQWtBQUFBRFRXVnVBQVFBQ1FBQUFBTk5aVzRBQkFBSkFBQUFBMDFsYmdBRUFBa0FBQUFEVFdWdUFBUUFDUUFBQUFOTlpXNEFCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUFCQUlBQUFBQkFBUUFDUUFBQUFWdVlXMWxjd0FBQUJBQUFBQUVBQVFBQ1FBQUFBUlpaV0Z5QUFRQUNRQUFBQTlGYlhCc2IzbHRaVzUwWDAxbFlXNEFCQUFKQUFBQUJGSmhZMlVBQkFBSkFBQUFBMU5sZUFBQUJBSUFBQUFCQUFRQUNRQUFBQVZqYkdGemN3QUFBQkFBQUFBQkFBUUFDUUFBQUFwa1lYUmhMbVp5WVcxbEFBQUVBZ0FBQUFFQUJBQUpBQUFBQ1hKdmR5NXVZVzFsY3dBQUFBMEFBQUFDZ0FBQUFQLy8vL1VBQUFEK0FBQUVBZ0FBQUFFQUJBQUpBQUFBQjI5d2RHbHZibk1BQUFJVEFBQUFCUUFBQUJBQUFBQUJBQVFBQ1FBQUFBRnlBQUFBRUFBQUFBRUFCQUFKQUFBQUQzVnVibUZ0WldRdFkyaDFibXN0TVFBQUFBb0FBQUFCQUFBQUFBQUFBQTBBQUFBQkFBQUFDd0FBQUEwQUFBQUJBQUFBQkFBQUJBSUFBQUwvQUFBQUVBQUFBQVVBQkFBSkFBQUFCbVZ1WjJsdVpRQUVBQWtBQUFBRmJHRmlaV3dBQkFBSkFBQUFEbkp2ZDI1aGJXVnpMbkJ5YVc1MEFBUUFDUUFBQUFweWIzZHpMblJ2ZEdGc0FBUUFDUUFBQUFwamIyeHpMblJ2ZEdGc0FBQUEvZ0FBQVA0PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Employment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"6629.167","3":"African","4":"Men"},{"1":"2010","2":"6680.167","3":"African","4":"Men"},{"1":"2011","2":"6766.250","3":"African","4":"Men"},{"1":"2012","2":"7105.500","3":"African","4":"Men"},{"1":"2013","2":"7306.167","3":"African","4":"Men"},{"1":"2014","2":"7613.250","3":"African","4":"Men"},{"1":"2015","2":"7938.417","3":"African","4":"Men"},{"1":"2016","2":"8228.167","3":"African","4":"Men"},{"1":"2017","2":"8499.583","3":"African","4":"Men"},{"1":"2018","2":"8744.583","3":"African","4":"Men"},{"1":"2019","2":"NA","3":"African","4":"Men"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmxhY2tfbWVuX3VuZW1wbG95bWVudCAlPiVcbiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lXG4gIG11dGF0ZShVbmVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lXG4gIHNlbGVjdChZZWFyLFVuZW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJBZnJpY2FuXCIpICU+JVxuICBtdXRhdGUoU2V4PVwiTWVuXCIpXG5gYGAifQ== -->
+<pre class="r"><code>black_men_unemployment %&gt;%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Unemployment_Mean=total/12) %&gt;%
+  select(Year,Unemployment_Mean) %&gt;%
+  mutate(Race=&quot;African&quot;) %&gt;%
+  mutate(Sex=&quot;Men&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDVUl3QUFBQUFBUUpYSVZWVlZWVlZBbFRxcXFxcXFxMENSL3dBQUFBQUFRSkRrVlZWVlZWVkFqbFZWVlZWVlZVQ0tDMVZWVlZWVlFJY0FxcXFxcXF0QWhLb0FBQUFBQUVDQ0tWVlZWVlZWZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBQUFCQUFBQUFMQUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUVBQWtBQUFBRFRXVnVBQVFBQ1FBQUFBTk5aVzRBQkFBSkFBQUFBMDFsYmdBRUFBa0FBQUFEVFdWdUFBUUFDUUFBQUFOTlpXNEFCQUFKQUFBQUEwMWxiZ0FFQUFrQUFBQURUV1Z1QUFRQUNRQUFBQU5OWlc0QUJBQUpBQUFBQTAxbGJnQUFCQUlBQUFBQkFBUUFDUUFBQUFWdVlXMWxjd0FBQUJBQUFBQUVBQVFBQ1FBQUFBUlpaV0Z5QUFRQUNRQUFBQkZWYm1WdGNHeHZlVzFsYm5SZlRXVmhiZ0FFQUFrQUFBQUVVbUZqWlFBRUFBa0FBQUFEVTJWNEFBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUNtUmhkR0V1Wm5KaGJXVUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFLQUFBQUEvLy8vOVFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkweUFBQUFDZ0FBQUFFQUFBQUFBQUFBRFFBQUFBRUFBQUFMQUFBQURRQUFBQUVBQUFBRUFBQUVBZ0FBQXY4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Unemployment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"1288.7500","3":"African","4":"Men"},{"1":"2010","2":"1394.0833","3":"African","4":"Men"},{"1":"2011","2":"1358.6667","3":"African","4":"Men"},{"1":"2012","2":"1151.7500","3":"African","4":"Men"},{"1":"2013","2":"1081.0833","3":"African","4":"Men"},{"1":"2014","2":"970.6667","3":"African","4":"Men"},{"1":"2015","2":"833.4167","3":"African","4":"Men"},{"1":"2016","2":"736.0833","3":"African","4":"Men"},{"1":"2017","2":"661.2500","3":"African","4":"Men"},{"1":"2018","2":"581.1667","3":"African","4":"Men"},{"1":"2019","2":"NA","3":"African","4":"Men"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmxhY2tfd29tZW5fZW1wbG95ZWQgJT4lXG4gIG11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyK0FwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JVxuICBtdXRhdGUoRW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiVcbiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJBZnJpY2FuXCIpICU+JVxuICBtdXRhdGUoU2V4PVwiV29tZW5cIilcbmBgYCJ9 -->
+<pre class="r"><code>black_women_employed %&gt;%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Employment_Mean=total/12) %&gt;%
+  select(Year,Employment_Mean) %&gt;%
+  mutate(Race=&quot;African&quot;) %&gt;%
+  mutate(Sex=&quot;Women&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDL0ZKVlZWVlZWUUw4STFWVlZWVlZBdnVHQUFBQUFBRURBUEFxcXFxcXJRTUJyQ3FxcXFxdEF3T3FxcXFxcXEwREJvdUFBQUFBQVFNSUE0QUFBQUFCQXdwVFZWVlZWVlVEREM0cXFxcXFyZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBQUFCQUFBQUFMQUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQkFBSkFBQUFCVmR2YldWdUFBUUFDUUFBQUFWWGIyMWxiZ0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQVFBQ1FBQUFBVlhiMjFsYmdBRUFBa0FBQUFGVjI5dFpXNEFCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQUFRQ0FBQUFBUUFFQUFrQUFBQUZibUZ0WlhNQUFBQVFBQUFBQkFBRUFBa0FBQUFFV1dWaGNnQUVBQWtBQUFBUFJXMXdiRzk1YldWdWRGOU5aV0Z1QUFRQUNRQUFBQVJTWVdObEFBUUFDUUFBQUFOVFpYZ0FBQVFDQUFBQUFRQUVBQWtBQUFBRlkyeGhjM01BQUFBUUFBQUFBUUFFQUFrQUFBQUtaR0YwWVM1bWNtRnRaUUFBQkFJQUFBQUJBQVFBQ1FBQUFBbHliM2N1Ym1GdFpYTUFBQUFOQUFBQUFvQUFBQUQvLy8vMUFBQUEvZ0FBQkFJQUFBQUJBQVFBQ1FBQUFBZHZjSFJwYjI1ekFBQUNFd0FBQUFVQUFBQVFBQUFBQVFBRUFBa0FBQUFCY2dBQUFCQUFBQUFCQUFRQUNRQUFBQTkxYm01aGJXVmtMV05vZFc1ckxUTUFBQUFLQUFBQUFRQUFBQUFBQUFBTkFBQUFBUUFBQUFzQUFBQU5BQUFBQVFBQUFBUUFBQVFDQUFBQy93QUFBQkFBQUFBRkFBUUFDUUFBQUFabGJtZHBibVVBQkFBSkFBQUFCV3hoWW1Wc0FBUUFDUUFBQUE1eWIzZHVZVzFsY3k1d2NtbHVkQUFFQUFrQUFBQUtjbTkzY3k1MGIzUmhiQUFFQUFrQUFBQUtZMjlzY3k1MGIzUmhiQUFBQVA0QUFBRCsifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Employment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"7956.583","3":"African","4":"Women"},{"1":"2010","2":"7944.833","3":"African","4":"Women"},{"1":"2011","2":"7905.500","3":"African","4":"Women"},{"1":"2012","2":"8312.083","3":"African","4":"Women"},{"1":"2013","2":"8406.083","3":"African","4":"Women"},{"1":"2014","2":"8661.333","3":"African","4":"Women"},{"1":"2015","2":"9029.750","3":"African","4":"Women"},{"1":"2016","2":"9217.750","3":"African","4":"Women"},{"1":"2017","2":"9513.667","3":"African","4":"Women"},{"1":"2018","2":"9751.083","3":"African","4":"Women"},{"1":"2019","2":"NA","3":"African","4":"Women"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmxhY2tfd29tZW5fdW5lbXBsb3llZCAlPiVcbiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lXG4gIG11dGF0ZShVbmVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lXG4gIHNlbGVjdChZZWFyLFVuZW1wbG95bWVudF9NZWFuKSAlPiVcbiAgbXV0YXRlKFJhY2U9XCJBZnJpY2FuXCIpICU+JVxuICBtdXRhdGUoU2V4PVwiV29tZW5cIilcbmBgYCJ9 -->
+<pre class="r"><code>black_women_unemployed %&gt;%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%&gt;%
+  mutate(Unemployment_Mean=total/12) %&gt;%
+  select(Year,Unemployment_Mean) %&gt;%
+  mutate(Race=&quot;African&quot;) %&gt;%
+  mutate(Sex=&quot;Women&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6NCwibnJvdyI6MTF9LCJyZGYiOiJVa1JZTWdwWUNnQUFBQUlBQXdRQkFBSURBQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBUUFBQUFPQUFBQUMwQ2ZaQUFBQUFBQVFKOW9BQUFBQUFCQW4yd0FBQUFBQUVDZmNBQUFBQUFBUUo5MEFBQUFBQUJBbjNnQUFBQUFBRUNmZkFBQUFBQUFRSitBQUFBQUFBQkFuNFFBQUFBQUFFQ2ZpQUFBQUFBQVFKK01BQUFBQUFBQUFBQU9BQUFBQzBDUUdWVlZWVlZWUUpJMUFBQUFBQUJBa3MxVlZWVlZWVUNSZmdBQUFBQUFRSkMrVlZWVlZWVkFqWHFxcXFxcXEwQ0paZ0FBQUFBQVFJYWxWVlZWVlZWQWhKSUFBQUFBQUVDQjRxcXFxcXFyZi9nQUFBQUFCNklBQUFBUUFBQUFDd0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBRUFBa0FBQUFIUVdaeWFXTmhiZ0FFQUFrQUFBQUhRV1p5YVdOaGJnQUVBQWtBQUFBSFFXWnlhV05oYmdBQUFCQUFBQUFMQUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQkFBSkFBQUFCVmR2YldWdUFBUUFDUUFBQUFWWGIyMWxiZ0FFQUFrQUFBQUZWMjl0Wlc0QUJBQUpBQUFBQlZkdmJXVnVBQVFBQ1FBQUFBVlhiMjFsYmdBRUFBa0FBQUFGVjI5dFpXNEFCQUFKQUFBQUJWZHZiV1Z1QUFRQUNRQUFBQVZYYjIxbGJnQUVBQWtBQUFBRlYyOXRaVzRBQUFRQ0FBQUFBUUFFQUFrQUFBQUZibUZ0WlhNQUFBQVFBQUFBQkFBRUFBa0FBQUFFV1dWaGNnQUVBQWtBQUFBUlZXNWxiWEJzYjNsdFpXNTBYMDFsWVc0QUJBQUpBQUFBQkZKaFkyVUFCQUFKQUFBQUExTmxlQUFBQkFJQUFBQUJBQVFBQ1FBQUFBVmpiR0Z6Y3dBQUFCQUFBQUFCQUFRQUNRQUFBQXBrWVhSaExtWnlZVzFsQUFBRUFnQUFBQUVBQkFBSkFBQUFDWEp2ZHk1dVlXMWxjd0FBQUEwQUFBQUNnQUFBQVAvLy8vVUFBQUQrQUFBRUFnQUFBQUVBQkFBSkFBQUFCMjl3ZEdsdmJuTUFBQUlUQUFBQUJRQUFBQkFBQUFBQkFBUUFDUUFBQUFGeUFBQUFFQUFBQUFFQUJBQUpBQUFBRDNWdWJtRnRaV1F0WTJoMWJtc3ROQUFBQUFvQUFBQUJBQUFBQUFBQUFBMEFBQUFCQUFBQUN3QUFBQTBBQUFBQkFBQUFCQUFBQkFJQUFBTC9BQUFBRUFBQUFBVUFCQUFKQUFBQUJtVnVaMmx1WlFBRUFBa0FBQUFGYkdGaVpXd0FCQUFKQUFBQURuSnZkMjVoYldWekxuQnlhVzUwQUFRQUNRQUFBQXB5YjNkekxuUnZkR0ZzQUFRQUNRQUFBQXBqYjJ4ekxuUnZkR0ZzQUFBQS9nQUFBUDQ9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Unemployment_Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Race"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Sex"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"2009","2":"1030.3333","3":"African","4":"Women"},{"1":"2010","2":"1165.2500","3":"African","4":"Women"},{"1":"2011","2":"1203.3333","3":"African","4":"Women"},{"1":"2012","2":"1119.5000","3":"African","4":"Women"},{"1":"2013","2":"1071.5833","3":"African","4":"Women"},{"1":"2014","2":"943.3333","3":"African","4":"Women"},{"1":"2015","2":"812.7500","3":"African","4":"Women"},{"1":"2016","2":"724.6667","3":"African","4":"Women"},{"1":"2017","2":"658.2500","3":"African","4":"Women"},{"1":"2018","2":"572.3333","3":"African","4":"Women"},{"1":"2019","2":"NA","3":"African","4":"Women"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[11]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmluYWwgUHJvamVjZXQiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQojIGNsZWFuIHVwIHdvcmtzcGFjZSBlbnZpcm9ubWVudApybShsaXN0ID0gbHMoKSkKCiMgYWxsIHBhY2thZ2VzIHVzZWQgZm9yIHRoZSBhc3NpZ25tZW50CmxpYnJhcnkobW9zYWljKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShEYXRhQ29tcHV0aW5nKQpsaWJyYXJ5KHhsc3gpCmBgYAoKIyMjIFVwb2FkIHRoZSBkYXRhCmBgYHtyfQpsaWJyYXJ5KHJlYWR4bCkKd2hpdGVNZW5FbXBsb3ltZW50TGV2ZWwgPC0gcmVhZF9leGNlbCgiRGF0YS93aGl0ZU1lbkVtcGxveW1lbnRMZXZlbC54bHN4Iiwgc2tpcD0xMikKd2hpdGVNZW5VbmVtcGxveW1lbnRMZXZlbCA8LSByZWFkX2V4Y2VsKCJEYXRhL3doaXRlTWVuVW5lbXBsb3ltZW50TGV2ZWwueGxzeCIsIHNraXA9MTIpCndoaXRlX3dvbWVuX3VuZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS93aGl0ZSB3b21lbiB1bmVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCndoaXRlX3dvbWVuX2VtcGxveWVkIDwtIHJlYWRfZXhjZWwoIkRhdGEvd2hpdGUgd29tZW4gZW1wbG95ZWQueGxzeCIsIHNraXAgPSAxMikKbGF0aW5vX3dvbWVuX3VuZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9sYXRpbm8gd29tZW4gdW5lbXBsb3llZC54bHN4Iiwgc2tpcCA9IDEyKQpsYXRpbm9fd29tZW5fZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9sYXRpbm8gd29tZW4gZW1wbG95ZWQueGxzeCIsIHNraXAgPSAxMikKbGF0aW5vX21lbl91bmVtcGxveWVkIDwtIHJlYWRfZXhjZWwoIkRhdGEvbGF0aW5vIG1lbiB1bmVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCmxhdGlub19tZW5fZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9sYXRpbm8gbWVuIGVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCmJsYWNrX3dvbWVuX3VuZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9ibGFjayB3b21lbiB1bmVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCmJsYWNrX3dvbWVuX2VtcGxveWVkIDwtIHJlYWRfZXhjZWwoIkRhdGEvYmxhY2sgd29tZW4gZW1wbG95ZWQueGxzeCIsIHNraXAgPSAxMikKYmxhY2tfbWVuX3VuZW1wbG95bWVudCA8LSByZWFkX2V4Y2VsKCJEYXRhL2JsYWNrIG1lbiB1bmVtcGxveW1lbnQueGxzeCIsIHNraXAgPSAxMikKYmxhY2tfbWVuX2VtcGxveW1lbnQgPC0gcmVhZF9leGNlbCgiRGF0YS9ibGFjayBtZW4gZW1wbG95bWVudC54bHN4Iiwgc2tpcCA9IDEyKQoKYGBgCgojIyMgCgpgYGB7cn0Kd2hpdGVNZW5FbXBsb3ltZW50TGV2ZWwKYmxhY2tfbWVuX2VtcGxveW1lbnQKd2hpdGVNZW5VbmVtcGxveW1lbnRMZXZlbAoKYGBgCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmluYWwgUHJvamVjZXQiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCmBgYHtyfQojIGNsZWFuIHVwIHdvcmtzcGFjZSBlbnZpcm9ubWVudApybShsaXN0ID0gbHMoKSkKCiMgYWxsIHBhY2thZ2VzIHVzZWQgZm9yIHRoZSBhc3NpZ25tZW50CmxpYnJhcnkobW9zYWljKQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShEYXRhQ29tcHV0aW5nKQpsaWJyYXJ5KHhsc3gpCmBgYAoKIyMjIFVwb2FkIHRoZSBkYXRhCmBgYHtyfQpsaWJyYXJ5KHJlYWR4bCkKd2hpdGVNZW5FbXBsb3ltZW50TGV2ZWwgPC0gcmVhZF9leGNlbCgiRGF0YS93aGl0ZU1lbkVtcGxveW1lbnRMZXZlbC54bHN4Iiwgc2tpcD0xMikKd2hpdGVNZW5VbmVtcGxveW1lbnRMZXZlbCA8LSByZWFkX2V4Y2VsKCJEYXRhL3doaXRlTWVuVW5lbXBsb3ltZW50TGV2ZWwueGxzeCIsIHNraXA9MTIpCndoaXRlX3dvbWVuX3VuZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS93aGl0ZSB3b21lbiB1bmVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCndoaXRlX3dvbWVuX2VtcGxveWVkIDwtIHJlYWRfZXhjZWwoIkRhdGEvd2hpdGUgd29tZW4gZW1wbG95ZWQueGxzeCIsIHNraXAgPSAxMikKbGF0aW5vX3dvbWVuX3VuZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9sYXRpbm8gd29tZW4gdW5lbXBsb3llZC54bHN4Iiwgc2tpcCA9IDEyKQpsYXRpbm9fd29tZW5fZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9sYXRpbm8gd29tZW4gZW1wbG95ZWQueGxzeCIsIHNraXAgPSAxMikKbGF0aW5vX21lbl91bmVtcGxveWVkIDwtIHJlYWRfZXhjZWwoIkRhdGEvbGF0aW5vIG1lbiB1bmVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCmxhdGlub19tZW5fZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9sYXRpbm8gbWVuIGVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCmJsYWNrX3dvbWVuX3VuZW1wbG95ZWQgPC0gcmVhZF9leGNlbCgiRGF0YS9ibGFjayB3b21lbiB1bmVtcGxveWVkLnhsc3giLCBza2lwID0gMTIpCmJsYWNrX3dvbWVuX2VtcGxveWVkIDwtIHJlYWRfZXhjZWwoIkRhdGEvYmxhY2sgd29tZW4gZW1wbG95ZWQueGxzeCIsIHNraXAgPSAxMikKYmxhY2tfbWVuX3VuZW1wbG95bWVudCA8LSByZWFkX2V4Y2VsKCJEYXRhL2JsYWNrIG1lbiB1bmVtcGxveW1lbnQueGxzeCIsIHNraXAgPSAxMikKYmxhY2tfbWVuX2VtcGxveW1lbnQgPC0gcmVhZF9leGNlbCgiRGF0YS9ibGFjayBtZW4gZW1wbG95bWVudC54bHN4Iiwgc2tpcCA9IDEyKQoKYGBgCgojIyMgCgpgYGB7cn0Kd2hpdGVNZW5FbXBsb3ltZW50TGV2ZWwKYmxhY2tfbWVuX2VtcGxveW1lbnQKd2hpdGVNZW5VbmVtcGxveW1lbnRMZXZlbAoKYGBgCgpgYGB7cn0Kd2hpdGVNZW5FbXBsb3ltZW50TGV2ZWwgJT4lCiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrIEFwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JQogIG11dGF0ZShFbXBsb3ltZW50X01lYW49dG90YWwvMTIpICU+JQogIHNlbGVjdChZZWFyLEVtcGxveW1lbnRfTWVhbikgJT4lCiAgbXV0YXRlKFJhY2U9IldoaXRlIikgJT4lCiAgbXV0YXRlKFNleD0iTWVuIikKCmBgYAoKYGBge3J9CndoaXRlTWVuVW5lbXBsb3ltZW50TGV2ZWwgJT4lCm11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyKyBBcHIrTWF5K0p1bitKdWwrQXVnK1NlcCtPY3QrTm92K0RlYyklPiUKICBtdXRhdGUoVW5lbXBsb3ltZW50X01lYW49dG90YWwvMTIpICU+JQogIHNlbGVjdChZZWFyLFVuZW1wbG95bWVudF9NZWFuKSAlPiUKICBtdXRhdGUoUmFjZT0iV2hpdGUiKSAlPiUKICBtdXRhdGUoU2V4PSJNZW4iKQoKYGBgCgpgYGB7cn0Kd2hpdGVfd29tZW5fZW1wbG95ZWQlPiUKICBtdXRhdGUgKHRvdGFsPSBKYW4rRmViK01hcisgQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lCiAgbXV0YXRlKEVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lCiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiUKICBtdXRhdGUoUmFjZT0iV2hpdGUiKSAlPiUKICBtdXRhdGUoU2V4PSJXb21lbiIpCgoKCmBgYAoKYGBge3J9CndoaXRlX3dvbWVuX3VuZW1wbG95ZWQgJT4lCiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrIEFwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JQogIG11dGF0ZShVbmVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lCiAgc2VsZWN0KFllYXIsVW5lbXBsb3ltZW50X01lYW4pICU+JQogIG11dGF0ZShSYWNlPSJXaGl0ZSIpICU+JQogIG11dGF0ZShTZXg9IldvbWVuIikKCmBgYAoKYGBge3J9CmxhdGlub19tZW5fZW1wbG95ZWQgJT4lCiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrIEFwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JQogIG11dGF0ZShFbXBsb3ltZW50X01lYW49dG90YWwvMTIpICU+JQogIHNlbGVjdChZZWFyLEVtcGxveW1lbnRfTWVhbikgJT4lCiAgbXV0YXRlKFJhY2U9IkxhdGlubyIpICU+JQogIG11dGF0ZShTZXg9Ik1lbiIpCmBgYAoKYGBge3J9CmxhdGlub19tZW5fdW5lbXBsb3llZCAlPiUKICBtdXRhdGUgKHRvdGFsPSBKYW4rRmViK01hcisgQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lCiAgbXV0YXRlKFVuZW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiUKICBzZWxlY3QoWWVhcixVbmVtcGxveW1lbnRfTWVhbikgJT4lCiAgbXV0YXRlKFJhY2U9IkxhdGlubyIpICU+JQogIG11dGF0ZShTZXg9Ik1lbiIpCgpgYGAKCgpgYGB7cn0KbGF0aW5vX3dvbWVuX2VtcGxveWVkICU+JQogIG11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyKyBBcHIrTWF5K0p1bitKdWwrQXVnK1NlcCtPY3QrTm92K0RlYyklPiUKICBtdXRhdGUoRW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiUKICBzZWxlY3QoWWVhcixFbXBsb3ltZW50X01lYW4pICU+JQogIG11dGF0ZShSYWNlPSJMYXRpbm8iKSAlPiUKICBtdXRhdGUoU2V4PSJXb21lbiIpCgpgYGAKCmBgYHtyfQpsYXRpbm9fd29tZW5fdW5lbXBsb3llZCAlPiUKICBtdXRhdGUgKHRvdGFsPSBKYW4rRmViK01hcisgQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lCiAgbXV0YXRlKFVuZW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiUKICBzZWxlY3QoWWVhcixVbmVtcGxveW1lbnRfTWVhbikgJT4lCiAgbXV0YXRlKFJhY2U9IkxhdGlubyIpICU+JQogIG11dGF0ZShTZXg9IldvbWVuIikKYGBgCgpgYGB7cn0KYmxhY2tfbWVuX2VtcGxveW1lbnQgJT4lCiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lCiAgbXV0YXRlKEVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lCiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiUKICBtdXRhdGUoUmFjZT0iQWZyaWNhbiIpICU+JQogIG11dGF0ZShTZXg9Ik1lbiIpCmBgYAoKCmBgYHtyfQpibGFja19tZW5fdW5lbXBsb3ltZW50ICU+JQogIG11dGF0ZSAodG90YWw9IEphbitGZWIrTWFyK0FwcitNYXkrSnVuK0p1bCtBdWcrU2VwK09jdCtOb3YrRGVjKSU+JQogIG11dGF0ZShVbmVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lCiAgc2VsZWN0KFllYXIsVW5lbXBsb3ltZW50X01lYW4pICU+JQogIG11dGF0ZShSYWNlPSJBZnJpY2FuIikgJT4lCiAgbXV0YXRlKFNleD0iTWVuIikKYGBgCgpgYGB7cn0KYmxhY2tfd29tZW5fZW1wbG95ZWQgJT4lCiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lCiAgbXV0YXRlKEVtcGxveW1lbnRfTWVhbj10b3RhbC8xMikgJT4lCiAgc2VsZWN0KFllYXIsRW1wbG95bWVudF9NZWFuKSAlPiUKICBtdXRhdGUoUmFjZT0iQWZyaWNhbiIpICU+JQogIG11dGF0ZShTZXg9IldvbWVuIikKYGBgCgoKYGBge3J9CmJsYWNrX3dvbWVuX3VuZW1wbG95ZWQgJT4lCiAgbXV0YXRlICh0b3RhbD0gSmFuK0ZlYitNYXIrQXByK01heStKdW4rSnVsK0F1ZytTZXArT2N0K05vditEZWMpJT4lCiAgbXV0YXRlKFVuZW1wbG95bWVudF9NZWFuPXRvdGFsLzEyKSAlPiUKICBzZWxlY3QoWWVhcixVbmVtcGxveW1lbnRfTWVhbikgJT4lCiAgbXV0YXRlKFJhY2U9IkFmcmljYW4iKSAlPiUKICBtdXRhdGUoU2V4PSJXb21lbiIpCmBgYAoKCgo=</div>
 
 
 

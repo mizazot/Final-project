@@ -40,3 +40,125 @@ black_men_employment
 whiteMenUnemploymentLevel
 
 ```
+
+```{r}
+whiteMenEmploymentLevel %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12) %>%
+  select(Year,Employment_Mean) %>%
+  mutate(Race="White") %>%
+  mutate(Sex="Men")
+
+```
+
+```{r}
+whiteMenUnemploymentLevel %>%
+mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Unemployment_Mean=total/12) %>%
+  select(Year,Unemployment_Mean) %>%
+  mutate(Race="White") %>%
+  mutate(Sex="Men")
+
+```
+
+```{r}
+white_women_employed%>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12) %>%
+  select(Year,Employment_Mean) %>%
+  mutate(Race="White") %>%
+  mutate(Sex="Women")
+
+
+
+```
+
+```{r}
+white_women_unemployed %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Unemployment_Mean=total/12) %>%
+  select(Year,Unemployment_Mean) %>%
+  mutate(Race="White") %>%
+  mutate(Sex="Women")
+
+```
+
+```{r}
+latino_men_employed %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12) %>%
+  select(Year,Employment_Mean) %>%
+  mutate(Race="Latino") %>%
+  mutate(Sex="Men")
+```
+
+```{r}
+latino_men_unemployed %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Unemployment_Mean=total/12) %>%
+  select(Year,Unemployment_Mean) %>%
+  mutate(Race="Latino") %>%
+  mutate(Sex="Men")
+
+```
+
+
+```{r}
+latino_women_employed %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12) %>%
+  select(Year,Employment_Mean) %>%
+  mutate(Race="Latino") %>%
+  mutate(Sex="Women")
+
+```
+
+```{r}
+latino_women_unemployed %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Unemployment_Mean=total/12) %>%
+  select(Year,Unemployment_Mean) %>%
+  mutate(Race="Latino") %>%
+  mutate(Sex="Women")
+```
+
+```{r}
+black_men_employment %>%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12) %>%
+  select(Year,Employment_Mean) %>%
+  mutate(Race="African") %>%
+  mutate(Sex="Men")
+```
+
+
+```{r}
+black_men_unemployment %>%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Unemployment_Mean=total/12) %>%
+  select(Year,Unemployment_Mean) %>%
+  mutate(Race="African") %>%
+  mutate(Sex="Men")
+```
+
+```{r}
+black_women_employed %>%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12) %>%
+  select(Year,Employment_Mean) %>%
+  mutate(Race="African") %>%
+  mutate(Sex="Women")
+```
+
+
+```{r}
+black_women_unemployed %>%
+  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Unemployment_Mean=total/12) %>%
+  select(Year,Unemployment_Mean) %>%
+  mutate(Race="African") %>%
+  mutate(Sex="Women")
+```
+
+
+

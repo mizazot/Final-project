@@ -40,132 +40,189 @@ black_men_employment
 whiteMenUnemploymentLevel
 
 ```
+```{r}
+employment<-function(x){
+  x <- 
+    x %>% 
+    filter(Year != "2019") %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(Employment_Mean=total/12)%>%
+    select(Year,Employment_Mean)
+  return(x)
+}
+
+unemployment <-function(y){
+  y <- 
+    y %>% 
+    filter(Year != "2019") %>%
+  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
+  mutate(UnEmployment_Mean=total/12)%>%
+    select(Year,UnEmployment_Mean)
+  return(y)
+}
+
+
+```
 
 ```{r}
-whiteMenEmploymentLevel %>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Employment_Mean=total/12) %>%
-  select(Year,Employment_Mean) %>%
+whiteMenEmploymentLevel<-
+  employment(whiteMenEmploymentLevel)%>%
   mutate(Race="White") %>%
   mutate(Sex="Men")
+  whiteMenEmploymentLevel
 
 ```
 
 ```{r}
-whiteMenUnemploymentLevel %>%
-mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Unemployment_Mean=total/12) %>%
-  select(Year,Unemployment_Mean) %>%
+whiteMenUnemploymentLevel<-
+unemployment(whiteMenUnemploymentLevel)%>%
   mutate(Race="White") %>%
   mutate(Sex="Men")
-
+whiteMenUnemploymentLevel
 ```
 
 ```{r}
-white_women_employed%>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Employment_Mean=total/12) %>%
-  select(Year,Employment_Mean) %>%
+white_women_employed<-
+employment(white_women_employed)%>%
   mutate(Race="White") %>%
   mutate(Sex="Women")
-
+white_women_employed
 
 
 ```
 
 ```{r}
-white_women_unemployed %>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Unemployment_Mean=total/12) %>%
-  select(Year,Unemployment_Mean) %>%
+white_women_unemployed<-
+unemployment(white_women_unemployed)%>%
   mutate(Race="White") %>%
   mutate(Sex="Women")
-
+white_women_unemployed
 ```
 
 ```{r}
-latino_men_employed %>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Employment_Mean=total/12) %>%
-  select(Year,Employment_Mean) %>%
+latino_men_employed<-
+employment(latino_men_employed)%>%
   mutate(Race="Latino") %>%
   mutate(Sex="Men")
+latino_men_employed
 ```
 
 ```{r}
-latino_men_unemployed %>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Unemployment_Mean=total/12) %>%
-  select(Year,Unemployment_Mean) %>%
+latino_men_unemployed<-
+unemployment(latino_men_unemployed)%>%
   mutate(Race="Latino") %>%
   mutate(Sex="Men")
-
+latino_men_unemployed
 ```
 
 
 ```{r}
-latino_women_employed %>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Employment_Mean=total/12) %>%
-  select(Year,Employment_Mean) %>%
+latino_women_employed<-
+employment(latino_women_employed)%>%
   mutate(Race="Latino") %>%
   mutate(Sex="Women")
-
+latino_women_employed
 ```
 
 ```{r}
-latino_women_unemployed %>%
-  mutate (total= Jan+Feb+Mar+ Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Unemployment_Mean=total/12) %>%
-  select(Year,Unemployment_Mean) %>%
+latino_women_unemployed<-
+unemployment(latino_women_unemployed)%>%
   mutate(Race="Latino") %>%
   mutate(Sex="Women")
+latino_women_unemployed
 ```
 
 ```{r}
-black_men_employment %>%
-  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Employment_Mean=total/12) %>%
-  select(Year,Employment_Mean) %>%
+black_men_employment<-
+employment(black_men_employment)%>%
   mutate(Race="African") %>%
   mutate(Sex="Men")
+black_men_employment
 ```
 
 
 ```{r}
-black_men_unemployment %>%
-  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Unemployment_Mean=total/12) %>%
-  select(Year,Unemployment_Mean) %>%
+black_men_unemployment<-
+unemployment(black_men_unemployment)%>%
   mutate(Race="African") %>%
   mutate(Sex="Men")
+black_men_unemployment
 ```
 
 ```{r}
-black_women_employed %>%
-  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Employment_Mean=total/12) %>%
-  select(Year,Employment_Mean) %>%
+black_women_employed<-
+employment(black_women_employed)%>%
   mutate(Race="African") %>%
   mutate(Sex="Women")
+black_women_employed
 ```
 
 
 ```{r}
-black_women_unemployed %>%
-  mutate (total= Jan+Feb+Mar+Apr+May+Jun+Jul+Aug+Sep+Oct+Nov+Dec)%>%
-  mutate(Unemployment_Mean=total/12) %>%
-  select(Year,Unemployment_Mean) %>%
+black_women_unemployed<-
+unemployment(black_women_unemployed)%>%
   mutate(Race="African") %>%
   mutate(Sex="Women")
+black_women_unemployed
 ```
 
 ### join table
 ```{r}
-
+WhiteMen<-
+  whiteMenEmploymentLevel %>%
+  left_join(whiteMenUnemploymentLevel)
+WhiteMen
 ```
 
 
+```{r}
+WhiteWomen<-
+  white_women_employed %>%
+  left_join(white_women_unemployed)
+WhiteWomen
+```
 
+```{r}
+LatinoMen<-
+  latino_men_employed%>%
+  left_join(latino_men_unemployed)
+LatinoMen
+```
 
+```{r}
+LatinoWomen<-
+  latino_women_employed %>%
+  left_join(latino_women_unemployed)
+LatinoWomen
+```
+```{r}
+BlackMen<-
+  black_men_employment %>%
+  left_join(black_men_unemployment)
+BlackMen
+```
+```{r}
+BlackWomen<-
+  black_women_employed %>%
+  left_join(black_women_unemployed)
+BlackWomen
+```
+
+```{r}
+UnemploymentRate<-
+  rbind(WhiteMen,WhiteWomen,LatinoMen,LatinoWomen,BlackMen,BlackWomen)
+UnemploymentRate
+```
+
+### Unempolyment rate
+```{r}
+UnemploymentRate<-
+UnemploymentRate %>%
+  mutate(Unemployment_Rate=UnEmployment_Mean/(UnEmployment_Mean+Employment_Mean))%>%
+  select(Year, Race,Sex,Unemployment_Rate)
+UnemploymentRate
+  
+```
+
+###
 

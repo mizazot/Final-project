@@ -35,8 +35,17 @@ black_men_employment <- read_excel("Data/black men employment.xlsx", skip = 12)
 ### 
 
 ```{r}
-whiteMenEmploymentLevel
-black_men_employment
-whiteMenUnemploymentLevel
+WhiteMen <-
+whiteMenEmploymentLevel%>%
+  left_join(whiteMenUnemploymentLevel, by= c("year"="year"))
 
+WhiteWomen <-
+  white_women_employed%>%
+  left_join(white_women_unemployed, by= c("year"="year"))
+
+LatinoMen <-
+  latino_men_employed%>%
+  left_join(latino_men_unemployed, by = c("year" = "year"))
+
+  
 ```

@@ -135,7 +135,7 @@ latino_women_unemployed
 ```{r}
 black_men_employment<-
 employment(black_men_employment)%>%
-  mutate(Race="African") %>%
+  mutate(Race="African American") %>%
   mutate(Sex="Men")
 black_men_employment
 ```
@@ -144,7 +144,7 @@ black_men_employment
 ```{r}
 black_men_unemployment<-
 unemployment(black_men_unemployment)%>%
-  mutate(Race="African") %>%
+  mutate(Race="African American") %>%
   mutate(Sex="Men")
 black_men_unemployment
 ```
@@ -152,7 +152,7 @@ black_men_unemployment
 ```{r}
 black_women_employed<-
 employment(black_women_employed)%>%
-  mutate(Race="African") %>%
+  mutate(Race="African American") %>%
   mutate(Sex="Women")
 black_women_employed
 ```
@@ -161,7 +161,7 @@ black_women_employed
 ```{r}
 black_women_unemployed<-
 unemployment(black_women_unemployed)%>%
-  mutate(Race="African") %>%
+  mutate(Race="African American") %>%
   mutate(Sex="Women")
 black_women_unemployed
 ```
@@ -225,4 +225,10 @@ UnemploymentRate
 ```
 
 ###
+```{r}
+UnemploymentRate%>%
+  ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race))+
+  geom_point()+
+  facet_wrap(~ Sex)
 
+```

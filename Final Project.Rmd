@@ -222,11 +222,7 @@ UnemploymentRate %>%
   select(Year, Race,Sex,Unemployment_Rate)
 UnemploymentRate
 
-UnemploymentRate2 <- 
-  UnemploymentRate%>%
-  group_by(Race,Sex)%>%
-  summarise(Unemployment_Rate = sum(Unemployment_Rate))
-  
+
 ```
 
 ###
@@ -237,3 +233,21 @@ UnemploymentRate%>%
   facet_wrap(~ Sex)
 
 ```
+
+```{r}
+UnemploymentRate%>%
+  ggplot(aes(x=Race, y= Unemployment_Rate,color=Race))+
+  geom_boxplot()+
+  geom_point(aes(shape=Year))
+  facet_wrap(~ Sex)
+
+```
+
+
+
+
+
+
+
+
+

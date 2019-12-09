@@ -221,6 +221,11 @@ UnemploymentRate %>%
   mutate(Unemployment_Rate=UnEmployment_Mean/(UnEmployment_Mean+Employment_Mean))%>%
   select(Year, Race,Sex,Unemployment_Rate)
 UnemploymentRate
+
+UnemploymentRate2 <- 
+  UnemploymentRate%>%
+  group_by(Race,Sex)%>%
+  summarise(Unemployment_Rate = sum(Unemployment_Rate))
   
 ```
 

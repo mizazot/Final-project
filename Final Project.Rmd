@@ -244,7 +244,17 @@ UnemploymentRate%>%
 ```
 
 
+###
+```{r}
 
+UnemploymentRate%>%
+  group_by(Year)%>%
+  summarise(mean_rate = mean(Unemployment_Rate))
+
+
+
+
+```
 
 
 

@@ -33,7 +33,7 @@ Reasons <- read_excel("Reason data.xlsx")
 
 ```
 
-### 
+### View the data
 
 ```{r}
 whiteMenEmploymentLevel
@@ -41,8 +41,9 @@ black_men_employment
 whiteMenUnemploymentLevel
 
 ```
+### Create function that can help data wrangling
 ```{r}
-employment<-function(x){
+employment<-function(x){       # function that help calculate mean employment 
   x <- 
     x %>% 
     filter(Year != "2019") %>%
@@ -52,7 +53,7 @@ employment<-function(x){
   return(x)
 }
 
-unemployment <-function(y){
+unemployment <-function(y){   # function that help calculate mean unemployment
   y <- 
     y %>% 
     filter(Year != "2019") %>%
@@ -65,6 +66,7 @@ unemployment <-function(y){
 
 ```
 
+### Find out mean employment and unemployment
 ```{r}
 whiteMenEmploymentLevel<-
   employment(whiteMenEmploymentLevel)%>%
@@ -167,7 +169,7 @@ unemployment(black_women_unemployed)%>%
 black_women_unemployed
 ```
 
-### join table
+### join table for each race and sex
 ```{r}
 WhiteMen<-
   whiteMenEmploymentLevel %>%
@@ -209,13 +211,14 @@ BlackWomen<-
 BlackWomen
 ```
 
+### join table into one
 ```{r}
 UnemploymentRate<-
   rbind(WhiteMen,WhiteWomen,LatinoMen,LatinoWomen,BlackMen,BlackWomen)
 UnemploymentRate
 ```
 
-### Unempolyment rate
+### calculate Unempolyment rate
 ```{r}
 UnemploymentRate1<-
 UnemploymentRate %>%
@@ -227,8 +230,8 @@ UnemploymentRate1
 
 ```
 
-###
-```{r}
+### Graph of unemployment rate for different sex and race
+```{r fig.width=10}
 UnemploymentRate1%>%
   ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race))+
   geom_point()+
@@ -290,6 +293,19 @@ gather(key = Race, value = number, White, `African American`, Latino)%>%
   select(Reason, Race, rate)
 Reasons
 ```
+
+```{r fig.height=15, fig.width=15}
+Reasons %>%
+  ggplot(aes(x=Reason,y=rate,fill=Race))+
+  geom_col()+
+  facet_grid(Race~.)
+```
+
+
+
+
+
+
 
 
 

@@ -219,7 +219,8 @@ UnemploymentRate
 UnemploymentRate<-
 UnemploymentRate %>%
   mutate(Unemployment_Rate=UnEmployment_Mean/(UnEmployment_Mean+Employment_Mean))%>%
-  select(Year, Race,Sex,Unemployment_Rate)
+  select(Year, Race,Sex,Unemployment_Rate) %>%
+  mutate(Year= as.character(Year))
 UnemploymentRate
 
 
@@ -246,11 +247,12 @@ UnemploymentRate%>%
 
 ###
 ```{r}
-
+UnemploymentRate2<-
 UnemploymentRate%>%
   group_by(Year)%>%
   summarise(mean_rate = mean(Unemployment_Rate))
-
+ 
+UnemploymentRate2$Year[which(UnemploymentRate2$mean_rate==max(UnemploymentRate2$mean_rate))]
 
 
 

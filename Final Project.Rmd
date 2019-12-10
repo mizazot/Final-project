@@ -29,6 +29,7 @@ black_women_unemployed <- read_excel("Data/black women unemployed.xlsx", skip = 
 black_women_employed <- read_excel("Data/black women employed.xlsx", skip = 12)
 black_men_unemployment <- read_excel("Data/black men unemployment.xlsx", skip = 12)
 black_men_employment <- read_excel("Data/black men employment.xlsx", skip = 12)
+Reasons <- read_excel("Reason data.xlsx")
 
 ```
 
@@ -216,19 +217,19 @@ UnemploymentRate
 
 ### Unempolyment rate
 ```{r}
-UnemploymentRate<-
+UnemploymentRate1<-
 UnemploymentRate %>%
   mutate(Unemployment_Rate=UnEmployment_Mean/(UnEmployment_Mean+Employment_Mean))%>%
   select(Year, Race,Sex,Unemployment_Rate) %>%
   mutate(Year= as.character(Year))
-UnemploymentRate
+UnemploymentRate1
 
 
 ```
 
 ###
 ```{r}
-UnemploymentRate%>%
+UnemploymentRate1%>%
   ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race))+
   geom_point()+
   facet_wrap(~ Sex)
@@ -236,7 +237,7 @@ UnemploymentRate%>%
 ```
 
 ```{r}
-UnemploymentRate%>%
+UnemploymentRate1%>%
   ggplot(aes(x=Race, y= Unemployment_Rate,color=Race))+
   geom_boxplot()+
   geom_point()
@@ -248,7 +249,7 @@ UnemploymentRate%>%
 ###
 ```{r}
 UnemploymentRate2<-
-UnemploymentRate%>%
+UnemploymentRate1%>%
   group_by(Year)%>%
   summarise(mean_rate = mean(Unemployment_Rate))
  
@@ -258,8 +259,37 @@ UnemploymentRate2$Year[which(UnemploymentRate2$mean_rate==max(UnemploymentRate2$
 
 ```
 
+###
+```{r}
+Reasons
 
+Reasons <-
+  Reasons%>%
+  filter(Reason %in% c("Job losers and persons who completed temporary jobs","Job leavers","Reentrants","New entrants"))%>%
+  rename(Latino = Hispanic)
+Reasons
+```
 
+###
+```{r}
+UnemploymentRate3 <-
+UnemploymentRate%>%
+  filter(Year =="2010")%>%
+  mutate(labor = Employment_Mean+UnEmployment_Mean)%>%
+  group_by(Race)%>%
+  summarise(total = sum(labor))
+UnemploymentRate3
+```
+###
+```{r}
+Reasons <-
+  Reasons%>%
+gather(key = Race, value = number, White, `African American`, Latino)%>%
+  left_join(UnemploymentRate3, by = c("Race"="Race"))%>%
+  mutate(rate = number/total)%>%
+  select(Reason, Race, rate)
+Reasons
+```
 
 
 

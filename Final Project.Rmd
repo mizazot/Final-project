@@ -223,8 +223,7 @@ UnemploymentRate
 UnemploymentRate1<-
 UnemploymentRate %>%
   mutate(Unemployment_Rate=UnEmployment_Mean/(UnEmployment_Mean+Employment_Mean))%>%
-  select(Year, Race,Sex,Unemployment_Rate) %>%
-  mutate(Year= as.character(Year))
+  select(Year, Race,Sex,Unemployment_Rate) 
 UnemploymentRate1
 
 
@@ -234,7 +233,7 @@ UnemploymentRate1
 ```{r}
 UnemploymentRate1%>%
   ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race), size = 10)+
-  stat_smooth(model = lm)+
+  geom_line()+
   geom_point()+
   facet_wrap(~ Sex)+
   theme(axis.text.x = element_text(angle=45))

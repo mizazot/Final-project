@@ -240,14 +240,7 @@ UnemploymentRate1%>%
 
 ```
 
-```{r}
-UnemploymentRate1%>%
-  ggplot(aes(x=Race, y= Unemployment_Rate,color=Race))+
-  geom_boxplot()+
-  geom_point()
-  facet_wrap(~ Sex)
 
-```
 
 
 ###

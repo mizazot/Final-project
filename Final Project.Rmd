@@ -231,11 +231,13 @@ UnemploymentRate1
 ```
 
 ### Graph of unemployment rate for different sex and race
-```{r fig.width=10}
+```{r}
 UnemploymentRate1%>%
-  ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race))+
+  ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race), size = 10)+
+  stat_smooth(model = lm)+
   geom_point()+
-  facet_wrap(~ Sex)
+  facet_wrap(~ Sex)+
+  theme(axis.text.x = element_text(angle=45))
 
 ```
 
@@ -294,11 +296,12 @@ gather(key = Race, value = number, White, `African American`, Latino)%>%
 Reasons
 ```
 
-```{r fig.height=15, fig.width=15}
+```{r fig.height=15, fig.width=10}
 Reasons %>%
   ggplot(aes(x=Reason,y=rate,fill=Race))+
   geom_col()+
-  facet_grid(Race~.)
+  facet_grid(Race~.)+
+  theme(axis.text.x = element_text(angle=45))
 ```
 
 

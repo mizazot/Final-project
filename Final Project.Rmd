@@ -284,7 +284,8 @@ Reasons <-
 gather(key = Race, value = number, White, `African American`, Latino)%>%
   left_join(UnemploymentRate3, by = c("Race"="Race"))%>%
   mutate(rate = number/total)%>%
-  select(Reason, Race, rate)
+  select(Reason, Race, rate)%>%
+  mutate(Reason = if_else(Reason == "Job losers and persons who completed temporary jobs","Job losers",Reason))
 Reasons
 ```
 

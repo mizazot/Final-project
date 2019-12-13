@@ -233,7 +233,7 @@ UnemploymentRate1
 ```{r}
 UnemploymentRate1%>%
   ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race), size = 10)+
-  geom_line()+
+  statß_smooth()+
   geom_point()+
   facet_wrap(~ Sex)+
   theme(axis.text.x = element_text(angle=45))

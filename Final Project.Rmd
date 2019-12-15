@@ -13,8 +13,11 @@ library(tidyverse)
 library(DataComputing)
 library(xlsx)
 ```
+### Research question
+What is the main reason behind the highest unemployment rate in this decade? We want to investigate what is the main reason that causes unemployment in the year where the unemployment rate is high. In addition, we also want to compare it within races.
 
 ### Upoad the data
+The raw data consists of number of people employed and unemployed for 3 races the US. The last data (Reason) is a data of reasons why people were uneployed in 2010. The original data in a pdf format and it was not in a proper table so, we had to transfer the table to excel in order to upload it into R.
 ```{r}
 library(readxl)
 whiteMenEmploymentLevel <- read_excel("Data/whiteMenEmploymentLevel.xlsx", skip=12)
@@ -39,7 +42,7 @@ Reasons <- read_excel("Reason data.xlsx")
 whiteMenEmploymentLevel
 black_men_employment
 whiteMenUnemploymentLevel
-
+glimpse(whiteMenEmploymentLevel)
 ```
 ### Create function that can help data wrangling
 ```{r}
@@ -67,6 +70,7 @@ unemployment <-function(y){   # function that help calculate mean unemployment
 ```
 
 ### Find out mean employment and unemployment
+From the function we have created, we find the mean employment and unemployment rate of each year of different sex and race
 ```{r}
 whiteMenEmploymentLevel<-
   employment(whiteMenEmploymentLevel)%>%
@@ -219,6 +223,7 @@ UnemploymentRate
 ```
 
 ### calculate Unempolyment rate
+Unemployment rate is calculated by using the formula (number of people unemployed/labour force)
 ```{r}
 UnemploymentRate1<-
 UnemploymentRate %>%
@@ -233,7 +238,7 @@ UnemploymentRate1
 ```{r}
 UnemploymentRate1%>%
   ggplot(aes(x=Year, y= Unemployment_Rate, colour = Race), size = 10)+
-  statß_smooth()+
+  stat_smooth()+
   geom_point()+
   facet_wrap(~ Sex)+
   theme(axis.text.x = element_text(angle=45))
@@ -243,7 +248,8 @@ UnemploymentRate1%>%
 
 
 
-###
+### The year with the highest unemployment rate
+Since we want to find the reason behind the highest unemployment rate, we find the year that has the highest unemployment rate.
 ```{r}
 UnemploymentRate2<-
 UnemploymentRate1%>%
@@ -256,7 +262,7 @@ UnemploymentRate2$Year[which(UnemploymentRate2$mean_rate==max(UnemploymentRate2$
 
 ```
 
-###
+### Wrangling second data
 ```{r}
 Reasons
 
@@ -266,8 +272,8 @@ Reasons <-
   rename(Latino = Hispanic)
 Reasons
 ```
-
-###
+### labour force for both gender and reasons' unemployment rate
+One of our limitations is the second data that has the reasond behind unemployment in 2010 is not divided into sex. Hence, we had to to calculate the total labour force during that year in order to be able to find the unemployment rate for the reason data.
 ```{r}
 UnemploymentRate3 <-
 UnemploymentRate%>%

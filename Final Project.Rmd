@@ -14,10 +14,11 @@ library(DataComputing)
 library(xlsx)
 ```
 ### Research question
-What is the main reason behind the highest unemployment rate in this decade? We want to investigate what is the main reason that causes unemployment in the year where the unemployment rate is high. In addition, we also want to compare it within races.
+What is the main reason behind the highest unemployment rate in this decade? We want to investigate what is the main reason that causes unemployment in the year where the unemployment rate is the highest. In addition, we also want to compare it within races.
+(Research question:What is the main reason behind the highest unemployment rate in this decade?  Leading question: Which year has the highest unemployment rate? Is there any difference in unemployment rate between races and sexs?)
 
 ### Upoad the data
-The raw data consists of number of people employed and unemployed for 3 races the US. The last data (Reason) is a data of reasons why people were uneployed in 2010. The original data in a pdf format and it was not in a proper table so, we had to transfer the table to excel in order to upload it into R.
+The raw data consists of number of people employed and unemployed for 3 races the US. The last data (Reason) is a data of reasons why people were uneployed in 2010. The original data in a pdf format and it was not in a proper table so, we had to transfer the table to excel in order to upload it into R.(In the processes, because we do not need all the data, we delete some data and choose what we want to make a new data table.)
 ```{r}
 library(readxl)
 whiteMenEmploymentLevel <- read_excel("Data/whiteMenEmploymentLevel.xlsx", skip=12)
@@ -32,7 +33,7 @@ black_women_unemployed <- read_excel("Data/black women unemployed.xlsx", skip = 
 black_women_employed <- read_excel("Data/black women employed.xlsx", skip = 12)
 black_men_unemployment <- read_excel("Data/black men unemployment.xlsx", skip = 12)
 black_men_employment <- read_excel("Data/black men employment.xlsx", skip = 12)
-Reasons <- read_excel("Reason data.xlsx")
+Reasons <- read_excel("Reason data.xlsx")  
 
 ```
 
@@ -173,7 +174,8 @@ unemployment(black_women_unemployed)%>%
 black_women_unemployed
 ```
 
-### join table for each race and sex
+### join table of employment and unemployment for each race and sex
+Then we get table that shows both employment and unemployment for each sex and race. In this case, we can calculate for unemployment rate.
 ```{r}
 WhiteMen<-
   whiteMenEmploymentLevel %>%
@@ -222,8 +224,8 @@ UnemploymentRate<-
 UnemploymentRate
 ```
 
-### calculate Unempolyment rate
-Unemployment rate is calculated by using the formula (number of people unemployed/labour force)
+### calculate Unempolyment rate 
+Unemployment rate is calculated by using the formula unemployment rate = number of people unemployed/(number of people employed+number of people unemployed)
 ```{r}
 UnemploymentRate1<-
 UnemploymentRate %>%
@@ -245,11 +247,11 @@ UnemploymentRate1%>%
 
 ```
 
-
+We can find out that the unemployment rate for male is a little bit higher than that of female. And the race that with the highest unemployment rate is African American. We can almost think 2010 has the highest unemployment rate.
 
 
 ### The year with the highest unemployment rate
-Since we want to find the reason behind the highest unemployment rate, we find the year that has the highest unemployment rate.
+Since we want to find the reason behind the highest unemployment rate, we find the year that has the highest unemployment rate. Here we use a more precise way to make sure that 2010 has the highest mean unemployment rate.
 ```{r}
 UnemploymentRate2<-
 UnemploymentRate1%>%
@@ -262,7 +264,8 @@ UnemploymentRate2$Year[which(UnemploymentRate2$mean_rate==max(UnemploymentRate2$
 
 ```
 
-### Wrangling second data
+### Wrangling second data(The reasons for unemployment)
+Because some rows in the dataset are not useful, only some rows are needed. The Total unemployed is the number of unemployment and is not reason so we delet that. On temporary layoff,Not on temporary layoff,Permanent job losers,and Persons who completed temporary jobs are branches of Job losers and persons who completed temporary jobs. So only Job losers and persons who completed temporary jobs is needed.
 ```{r}
 Reasons
 
@@ -275,7 +278,7 @@ Reasons
 ### labour force for both gender and reasons' unemployment rate
 One of our limitations is the second data that has the reasond behind unemployment in 2010 is not divided into sex. Hence, we had to to calculate the total labour force during that year in order to be able to find the unemployment rate for the reason data.
 ```{r}
-UnemploymentRate3 <-
+UnemploymentRate3 <- # Try to find the total population in each race to prepare for calculation in 2010
 UnemploymentRate%>%
   filter(Year =="2010")%>%
   mutate(labor = Employment_Mean+UnEmployment_Mean)%>%
@@ -283,7 +286,7 @@ UnemploymentRate%>%
   summarise(total = sum(labor))
 UnemploymentRate3
 ```
-###
+###calculate the unemployment rate for different races in different reasons
 ```{r}
 Reasons <-
   Reasons%>%
@@ -294,7 +297,7 @@ gather(key = Race, value = number, White, `African American`, Latino)%>%
   mutate(Reason = if_else(Reason == "Job losers and persons who completed temporary jobs","Completed temporary jobs",Reason))
 Reasons
 ```
-
+### The plot for reasons 
 ```{r fig.height=15, fig.width=10}
 Reasons %>%
   ggplot(aes(x=Reason,y=rate,fill=Race))+
@@ -305,7 +308,11 @@ Reasons %>%
 
 
 
+We find out that there is no big difference between races for reasons behind unemployment, except fewer white are unemployed because of new entrants. The main reasons for all races to be unemployed in 2010 is completed temporary jobs.
 
+
+### Conclusion
+The reason that make unemployment so high in 2010 is completed temporary jobs. The year with the highest unemployment rate is 2010. In general, male has higher unemployment rate than female and afican american has higher unemployment rate.
 
 
 

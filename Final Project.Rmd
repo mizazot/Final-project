@@ -18,7 +18,7 @@ What is the main reason behind the highest unemployment rate in this decade? We 
 (Research question:What is the main reason behind the highest unemployment rate in this decade?  Leading question: Which year has the highest unemployment rate? Is there any difference in unemployment rate between races and sexs?)
 
 ### Upoad the data
-The raw data consists of number of people employed and unemployed for 3 races the US. The last data (Reason) is a data of reasons why people were uneployed in 2010. The original data in a pdf format and it was not in a proper table so, we had to transfer the table to excel in order to upload it into R.(In the processes, because we do not need all the data, we delete some data and choose what we want to make a new data table.)
+The raw data consists of number of people employed and unemployed for 3 races the US. The last data (Reason) is a data of reasons why people were uneployed in 2010. The original data in a pdf format and it was not in a proper table so, we had to transfer the table to excel in order to upload it into R.(In the processes, because we do not need all the data, we delete some data and choose what we want to make a new data table.) The data for the latino can be find here "https://www.bls.gov/webapps/legacy/cpsatab3.htm" and the rest of the races here "https://www.bls.gov/webapps/legacy/cpsatab2.htm"
 ```{r}
 library(readxl)
 whiteMenEmploymentLevel <- read_excel("Data/whiteMenEmploymentLevel.xlsx", skip=12)

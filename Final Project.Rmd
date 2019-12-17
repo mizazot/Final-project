@@ -265,7 +265,7 @@ UnemploymentRate2$Year[which(UnemploymentRate2$mean_rate==max(UnemploymentRate2$
 ```
 
 ### Wrangling second data(The reasons for unemployment)
-Because some rows in the dataset are not useful, only some rows are needed. The Total unemployed is the number of unemployment and is not reason so we delet that. On temporary layoff,Not on temporary layoff,Permanent job losers,and Persons who completed temporary jobs are branches of Job losers and persons who completed temporary jobs. So only Job losers and persons who completed temporary jobs is needed.
+Because some rows in the dataset are not useful, only some rows are needed. The Total unemployed is the number of unemployment and is not reason so we delete that. On temporary layoff,Not on temporary layoff,Permanent job losers,and Persons who completed temporary jobs are branches of Job losers and persons who completed temporary jobs. So only Job losers and persons who completed temporary jobs is needed. The original data can be found in "https://www.bls.gov/cps/aa2010/cpsaat28.pdf"
 ```{r}
 Reasons
 
@@ -276,7 +276,7 @@ Reasons <-
 Reasons
 ```
 ### labour force for both gender and reasons' unemployment rate
-One of our limitations is the second data that has the reasond behind unemployment in 2010 is not divided into sex. Hence, we had to to calculate the total labour force during that year in order to be able to find the unemployment rate for the reason data.
+One of our limitations is the second data that has the reasons behind unemployment in 2010 is not divided into sex. Hence, we had to to calculate the total labour force during that year in order to be able to find the unemployment rate for the reason data.
 ```{r}
 UnemploymentRate3 <- # Try to find the total population in each race to prepare for calculation in 2010
 UnemploymentRate%>%
